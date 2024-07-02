@@ -2,15 +2,21 @@
 name: User Story - Admin
 about: 'Project template: user story for Admin (Super User)'
 title: 'Admin user story:'
-labels: ''
+labels: user story
 assignees: ''
 
 ---
 
 As an **admin** I can **capability** so that **received benefit**
 
-**- AC 1**
+## Acceptance Criteria
+<ol>
+ <li> AC
+ <li> AC
+ <li> AC
+</ol>
 
-**- AC 2**
-
-**- AC 3**
+## Tasks
+[ ] Task 1
+[ ] Task 2
+[ ] Task 3
