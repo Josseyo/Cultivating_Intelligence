@@ -42,6 +42,10 @@ You can now use the `heroku` CLI program - try running `heroku apps` to confirm 
 ------
 
 ## Cultivating Intelligence
+Go to [Repository](https://github.com/users/Josseyo/projects/4)
+Go to live [website](https://github.com/users/Josseyo/projects/4)
+Go to [README.md](https://github.com/Josseyo/Cultivating_Intelligence/main/README.md)
+
 
 ## Wireframes
 
@@ -59,12 +63,27 @@ You can now use the `heroku` CLI program - try running `heroku apps` to confirm 
 
 ## Database Schema
 
-## Testing
+## Agile Methodology
+
+Go to [Kanban board](https://github.com/users/Josseyo/projects/4)
+
+A Kanban board with issues was created using GitHub Projects to manage the user stories and development process.
+
+# Cultivating Intelligence | Testing
+
+## Code Validation
+
+### HTML
+### Code Validation
+
+**HTML**
+All HTML pages were validated using [W3C HTML Validator](https://validator.w3.org/) to check for any issues or syntax errors. Please see the results below for each page:
 
 ## Deployment
 
-## Agile Methodology
 
 ## Technologies
 
 ## Credits
+User stories, https://github.com/rockroman/CI_PP4-Knowledge-Flow/blob/main/README.md?plain=1
+User stories, 
