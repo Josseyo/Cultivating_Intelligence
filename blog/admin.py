@@ -1,3 +1,23 @@
 from django.contrib import admin
+from.models import Post, Comment
+from django_summernote.admin import SummernoteModelAdmin
 
-# Register your models here.
+
+@admin.register(Post)
+class PostAdmin(SummernoteModelAdmin):
+    """Admin panel settings for posts"""
+    prepopulated_fields = {'slug': ('title',)}
+    list_display = ('title', 'slug', 'status', 'created_on')
+    search_fields = ['title', 'content']
+    list_filter = ('status', 'created_on')
+    summernote_fields = ('content')
+
+
+@admin.register(Comment)
+class CommentAdmin(admin.ModelAdmin):
+    """Admin panel for comments"""
+    list_display = ('post', 'name', 'body', 'created_on')
+    list_filter = ('name', 'created_on')
+    search_fields = ['name', 'email', 'body']
+
+

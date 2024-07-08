@@ -60,7 +60,7 @@ class Post(models.Model):
     media = models.IntegerField(
         verbose_name="Media", choices=MEDIA_TYPE)
     excerpt = models.TextField(blank=True)
-    body = models.TextField()
+    content = models.TextField()
     image = CloudinaryField('image', default='placeholder')
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
@@ -86,7 +86,7 @@ Comment Model,
 to create and manage comments:
     Name - comment author, assigned by username automatically
     Email - user email, assigned by user email automatically
-    Body - comment content
+    Content - comment content
     Created_on - comment creation date, used to organise comments in order
     Updated_on - comment update date, used for admin purposes
 """
