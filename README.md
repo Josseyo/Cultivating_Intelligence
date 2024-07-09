@@ -135,8 +135,93 @@ The user can navigate between the different pages and features using the provide
    - Upon successful registration, the user is logged in and redirected to the home page.
    - There is a link or button to access the registration page from the site's main navigation.
 
+## Database Models
+Link to ERD https://drive.google.com/file/d/1WCi45UnL2mnkBuHZyYrg0gmLmDXnZXu0/view?usp=sharing
 
-## Database Schema
+#### User model
+- Represents the users of the blog application. Each user has a unique username and email, a password, and timestamps for creation and update.
+
+| Database Key  | Field Type    | Validation |
+| ------------- | ------------- | ------------- |
+| username    |  ForeignKey   | User, on_delete=models.CASCADE  |
+| created_on      | DateTimeField   | auto_now_add=True    |
+| updated_on      | DateTimeField   | auto_now_add=True    |
+| status      | IntegerField   |        |
+| likes  |  ManyToManyField   |        |
+
+#### Post model
+- Represents the blog posts. Each post has a title, content, category, author (a reference to the User entity), and timestamps for publication, creation, and update.
+
+![post_model](docs/images/models/post_model.png)
+
+| Database Key  | Field Type    | Validation |
+| ------------- | ------------- | ------------- |
+| title      | CharField | max_length=200, unique=True  |
+| slug       | SlugField | max_length=100, unique=True  |
+| author    |  ForeignKey   | User, on_delete=models.CASCADE  |
+| category  | ForeignKey   | Category, on_delete=models.PROTECT, null=True  |
+| excerpt   | TextField   |      |
+| content     |TextField |      |
+| image      | CloudinaryField  | 'image', default='placeholder'   |
+| created_on      | DateTimeField   | auto_now_add=True    |
+| updated_on      | DateTimeField   | auto_now_add=True    |
+| status      | IntegerField   |        |
+| likes  |  ManyToManyField   |        |
+
+#### Comment model
+- Represents the comments made on blog posts. Each comment has a reference to the post it belongs to (Post entity), the author of the comment (User entity), the comment content, and timestamps for creation and update.
+
+- **Nested Comments**: Enable users to reply to specific comments, creating a hierarchical comment structure.
+
+| Database Key  | Field Type    | Validation |
+| ------------- | ------------- | ------------- |
+| post   | ForeignKey | Post, on_delete=models.CASCADE, related_name='comments'   |
+| author    |  ForeignKey   | User, on_delete=models.CASCADE  |
+| body     |TextField |   max_length=500   |
+| created_on      | DateTimeField   | auto_now_add=True    |
+| updated_on      | DateTimeField   | auto_now_add=True    |
+
+#### Category model
+ - Organize posts into different categories
+ - Relationship: One-to-Many between Category and Post (a post can belong to one category, but a category can have multiple posts)
+
+| Database Key  | Field Type    | Validation |
+| ------------- | ------------- | ------------- |
+| name   | ForeignKey | Category, on_delete=models.CASCADE, related_name='category'   |
+| description    |  TextField   | max_length=500 |
+| created_on      | DateTimeField   | auto_now_add=True    |
+| updated_on      | DateTimeField   | auto_now_add=True    |
+
+#### Tag model
+ Allow users to add tags to posts, making it easier to search and filter content.
+
+| Database Key  | Field Type    | Validation |
+| ------------- | ------------- | ------------- |
+| name   | String |   |
+| created_on      | DateTimeField   | auto_now_add=True    |
+| updated_on      | DateTimeField   | auto_now_add=True    |
+
+
+#### Post Tag model
+| Database Key  | Field Type    | Validation |
+| ------------- | ------------- | ------------- |
+| description    |  TextField   | max_length=500 |
+| created_on      | DateTimeField   | auto_now_add=True    |
+| updated_on      | DateTimeField   | auto_now_add=True    |
+
+#### Like model
+ Allow users to express like to posts.
+
+#### ERD Relationships:
+- One-to-Many between User and Post: A user can have multiple posts, but each post is associated with only one user.
+- One-to-Many between User and Comment: A user can have multiple comments, but each comment is associated with only one user.
+- One-to-Many between Post and Comment: A post can have multiple comments, but each comment is associated with only one post.
+- One-to-Many between Comment and Comment: A comment can have multiple replies, but each reply is associated with only one parent comment.
+- One-to-Many between Category and Post: A post can belong to one category, but a category can have multiple posts
+- Many-to-Many between Post and Tag: A tag can belong to multiple posts, and a post can have multiple tags.
+- Many-to-Many between Post and User (a user can like multiple posts, and a post can have multiple likes from different users)
+
+
 
 ## Agile Methodology
 
@@ -162,3 +247,6 @@ All HTML pages were validated using [W3C HTML Validator](https://validator.w3.or
 ## Credits
 User stories, https://github.com/rockroman/CI_PP4-Knowledge-Flow/blob/main/README.md?plain=1
 User stories, 
+
+## Process...
+I edited and rearranged the user stories in Kanban board in the beginning of coding the project. I struggled a bit with writing them so they would match the code to be able to finish clear bites of user stories to be able to move functionl bits to done in Kanban.
