@@ -101,7 +101,8 @@ class Comment(models.Model):
     email = models.EmailField()
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
-    Updated_on = models.DateTimeField(auto_now=True)
+    approved = models.BooleanField(default=False)
+
    
     class Meta:
         """
