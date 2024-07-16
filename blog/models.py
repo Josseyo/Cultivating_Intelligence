@@ -60,9 +60,9 @@ class Post(models.Model):
     featured_image = CloudinaryField('image', default='placeholder')
     
     excerpt = models.TextField(blank=True)
-    category = models.IntegerField(
+    category_type = models.IntegerField(
         verbose_name="Category", choices=CATEGORY_TYPE)
-    media = models.IntegerField(
+    media_type = models.IntegerField(
         verbose_name="Media", choices=MEDIA_TYPE)
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
@@ -84,6 +84,11 @@ class Post(models.Model):
     def number_of_likes(self):
         """Returns total number of likes for each post"""
         return self.likes.count() 
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.title)
+        return super().save(*args, **kwargs)
 
 """ 
 Comment Model,
