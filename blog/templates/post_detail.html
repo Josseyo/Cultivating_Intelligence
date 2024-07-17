@@ -34,7 +34,7 @@
                 <div class="row">
 
                     <div class="col-1">
-                        <strong>
+                       <strong>
                             {% if user.is_authenticated %}
                             <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
                                 {% csrf_token %}
@@ -47,9 +47,9 @@
                             {% else %}
                             <span class="text-secondary"><i class="far fa-heart"></i></span>
                             {% endif %}
-                        <!-- Number of likes goes before the closing strong tag -->
+                         <!--Number of likes goes before the closing strong tag--> 
                         <span class="text-secondary">{{ post.number_of_likes }} </span>
-                        </strong>
+                        </strong> 
                     </div>
                     <div class="col-1">
                         {% with comments.count as total_comments %}
