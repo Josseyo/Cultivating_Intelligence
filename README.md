@@ -171,15 +171,6 @@ Link to ERD https://drive.google.com/file/d/1WCi45UnL2mnkBuHZyYrg0gmLmDXnZXu0/vi
 #### Comment model
 - Represents the comments made on blog posts. Each comment has a reference to the post it belongs to (Post entity), the author of the comment (User entity), the comment content, and timestamps for creation and update.
 
-- **Nested Comments**: Enable users to reply to specific comments, creating a hierarchical comment structure.
-
-| Database Key  | Field Type    | Validation |
-| ------------- | ------------- | ------------- |
-| post   | ForeignKey | Post, on_delete=models.CASCADE, related_name='comments'   |
-| author    |  ForeignKey   | User, on_delete=models.CASCADE  |
-| body     |TextField |   max_length=500   |
-| created_on      | DateTimeField   | auto_now_add=True    |
-| updated_on      | DateTimeField   | auto_now_add=True    |
 
 #### Category model
  - Organize posts into different categories
@@ -222,12 +213,27 @@ Link to ERD https://drive.google.com/file/d/1WCi45UnL2mnkBuHZyYrg0gmLmDXnZXu0/vi
 - Many-to-Many between Post and User (a user can like multiple posts, and a post can have multiple likes from different users)
 
 
-
 ## Agile Methodology
 
 Go to [Kanban board](https://github.com/users/Josseyo/projects/4)
 
 A Kanban board with issues was created using GitHub Projects to manage the user stories and development process.
+
+**MUSCOW**
+The MVP contains the Must have functionality. 
+The Should, Could and Would be nice to have is added to future development 
+
+### Future development
+#### Could have
+- Nested Comments: Enable users to reply to specific comments, creating a hierarchical comment structure.
+
+| Database Key  | Field Type    | Validation |
+| ------------- | ------------- | ------------- |
+| post   | ForeignKey | Post, on_delete=models.CASCADE, related_name='comments'   |
+| author    |  ForeignKey   | User, on_delete=models.CASCADE  |
+| body     |TextField |   max_length=500   |
+| created_on      | DateTimeField   | auto_now_add=True    |
+| updated_on      | DateTimeField   | auto_now_add=True    |
 
 # Cultivating Intelligence | Testing
 
@@ -246,7 +252,13 @@ All HTML pages were validated using [W3C HTML Validator](https://validator.w3.or
 
 ## Credits
 User stories, https://github.com/rockroman/CI_PP4-Knowledge-Flow/blob/main/README.md?plain=1
-User stories, 
+User stories, https://github.com/ShizukaDonaghue/happy-beans/tree/main
+CI Django blog, https://www.youtube.com/watch?v=YH--VobIA8c&t=1453s
+
 
 ## Process...
+
+**Challenges** 
 I edited and rearranged the user stories in Kanban board in the beginning of coding the project. I struggled a bit with writing them so they would match the code to be able to finish clear bites of user stories to be able to move functionl bits to done in Kanban.
+
+Issues with CI database caused interuptions, confusion and unclear commits when trying to solve issue outside my reach. 
