@@ -77,9 +77,9 @@ class Post(models.Model):
         """
         ordering = ['-created_on']
 
-    def _str_(self):
+    def __str__(self):
         """Returns post title as a string"""
-        return self.title()
+        return self.title
 
     def number_of_likes(self):
         """Returns total number of likes for each post"""
@@ -101,11 +101,12 @@ to create and manage comments:
 """
 class Comment(models.Model):
 
-    post = models.ForeignKey(Post, on_delete=models.CASCADE,related_name='comments')
+    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')
     name = models.CharField(max_length=80) 
     email = models.EmailField()
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
+    updated_on = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)
 
    
@@ -114,11 +115,9 @@ class Comment(models.Model):
         Order comments by their creation dates in ascending order
         """    
         ordering = ['created_on']
-    
-    def _str_(self):
+
+    def __str__(self):
         """Returns comment body and author name"""    
         return f"Comment {self.body} by {self.name}"
 
-    def date_format_created_on(self):
-        """Date formatting for creation dates"""
-        return self.created_on.strftime('%d %b %Y')
+
