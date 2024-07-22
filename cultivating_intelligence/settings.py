@@ -27,9 +27,12 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['8000-josseyo-cultivatinginte-g2rcff6illk.ws.codeinstitute-ide.net','cultivating-intelligence-1ead7384db49.herokuapp.com', 'localhost',]
+CSRF_TRUSTED_ORIGINS = [
+    'https://8000-josseyo-cultivatinginte-g2rcff6illk.ws.codeinstitute-ide.net',
+]
 
 
 # Application definition
@@ -49,6 +52,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'django_summernote',
     'crispy_forms',
+    'crispy_bootstrap5',
     'blog',
 ]
 
@@ -65,7 +69,8 @@ MESSAGE_TAGS = {
     messages.ERROR: 'alert-danger',
 }
 
-CRISPY_Template_Pack = 'bootstrap5'
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -76,6 +81,7 @@ MIDDLEWARE = [
     'allauth.account.middleware.AccountMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
 ]
 
 ROOT_URLCONF = 'cultivating_intelligence.urls'
