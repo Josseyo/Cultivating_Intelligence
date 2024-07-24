@@ -140,16 +140,18 @@ body {
     background: transparent;
 }
 
-.btn-delete {
-    color: #fff;
-    background: #E84610;
-}
-
 .btn-like:hover,
 .btn-like:active {
     color: #E84610;
     background: transparent;
     border: none;
+}
+
+/* Save for later use */
+
+.btn-delete {
+    color: #fff;
+    background: #E84610;
 }
 
 .faded {
