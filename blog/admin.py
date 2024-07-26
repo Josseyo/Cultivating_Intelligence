@@ -1,5 +1,5 @@
 from django.contrib import admin
-from.models import Post, Comment
+from.models import Post, Comment, Category
 from django_summernote.admin import SummernoteModelAdmin
 
 
@@ -10,7 +10,7 @@ class PostAdmin(SummernoteModelAdmin):
     list_display = ('title', 'slug', 'status', 'created_on')
     search_fields = ['title', 'content']
     list_filter = ('status', 'created_on')
-    summernote_fields = ('content')
+    summernote_fields = ('content',)
 
 
 @admin.register(Comment)
@@ -23,5 +23,9 @@ class CommentAdmin(admin.ModelAdmin):
 
     def approve_comments(self, request, queryset):
         queryset.update(approved=True)
+
+@admin.register(Category)
+class CategoryAdmin(admin.ModelAdmin):
+    """Admin panel for categories"""
 
 
