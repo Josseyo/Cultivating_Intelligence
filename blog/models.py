@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
+from django.urls import reverse
+
 
 
 # Status for Post model
@@ -10,6 +12,7 @@ STATUS = (
 )
 
 
+"""
 # Media type choices for Post model
 MEDIA_TYPE = (
     (0, 'Text'),
@@ -27,6 +30,7 @@ CATEGORY_TYPE = (
     (4, 'Career Development and Advancement'),
     (5, 'Communication and Interpersonal Skills'),
 )
+"""
 
 # Models
 """ 
@@ -35,6 +39,14 @@ as part of the Django allauth library contains basic information about authentic
 username, password,email
 """
 
+""" 
+Category Model
+"""
+class Category(models.Model):
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
 """ 
 Post Model,
 to create and manage blog posts:
@@ -53,6 +65,9 @@ to create and manage blog posts:
 """
 class Post(models.Model):
     title = models.CharField(max_length=200, unique=True)
+   
+    category = models.ForeignKey(Category, on_delete=models.PROTECT, default=7)
+   
     slug = models.SlugField(max_length=100, unique=True)
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="blog_posts"
@@ -60,10 +75,12 @@ class Post(models.Model):
     featured_image = CloudinaryField('image', default='placeholder')
     
     excerpt = models.TextField(blank=True)
-    category_type = models.IntegerField(
-        verbose_name="Category", choices=CATEGORY_TYPE)
+   
+    """category_type = models.IntegerField(
+       verbose_name="Category", choices=CATEGORY_TYPE)
+   
     media_type = models.IntegerField(
-        verbose_name="Media", choices=MEDIA_TYPE)
+        verbose_name="Media", choices=MEDIA_TYPE)"""
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
