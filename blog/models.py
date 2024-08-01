@@ -1,9 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
-from django.urls import reverse
-
-
+from django.utils.text import slugify
 
 # Status for Post model
 STATUS = (
@@ -11,37 +9,6 @@ STATUS = (
     (1, 'Publish')
 )
 
-
-"""
-# Media type choices for Post model
-MEDIA_TYPE = (
-    (0, 'Text'),
-    (1, 'Video'),
-    (2, 'Pod')
-)
-
-
-# Category type choices for Post model
-CATEGORY_TYPE = (
-    (0, 'ADHD in the Workplace'),
-    (1, 'Workplace Strategies'),
-    (2, 'Stress and Emotional Regulation'),
-    (3, 'Education and Inclusive Practices'),
-    (4, 'Career Development and Advancement'),
-    (5, 'Communication and Interpersonal Skills'),
-)
-"""
-
-# Models
-""" 
-User Model,
-as part of the Django allauth library contains basic information about authenticated user and contains folowing fields:
-username, password,email
-"""
-
-""" 
-Category Model
-"""
 class Category(models.Model):
     name = models.CharField(max_length=100)
 
@@ -65,28 +32,16 @@ to create and manage blog posts:
 """
 class Post(models.Model):
     title = models.CharField(max_length=200, unique=True)
-   
-    category = models.ForeignKey(Category, on_delete=models.PROTECT, default=7)
-   
-    slug = models.SlugField(max_length=100, unique=True)
-    author = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name="blog_posts"
-    )
+    category = models.ForeignKey(Category, on_delete=models.PROTECT)
+    slug = models.SlugField(max_length=100, unique=True, blank=True)
+    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="blog_posts")
     featured_image = CloudinaryField('image', default='placeholder')
-    
     excerpt = models.TextField(blank=True)
-   
-    """category_type = models.IntegerField(
-       verbose_name="Category", choices=CATEGORY_TYPE)
-   
-    media_type = models.IntegerField(
-        verbose_name="Media", choices=MEDIA_TYPE)"""
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
     status = models.IntegerField(choices=STATUS, default=0)
-    likes = models.ManyToManyField(
-        User, related_name='blogpost_like', blank=True)
+    likes = models.ManyToManyField(User, related_name='blogpost_like', blank=True)
 
     class Meta:
         """
@@ -105,12 +60,12 @@ class Post(models.Model):
     def save(self, *args, **kwargs):
         if not self.slug:
             self.slug = slugify(self.title)
-        return super().save(*args, **kwargs)
+        super().save(*args, **kwargs)
 
 """ 
 Comment Model,
 to create and manage comments:
-    Name - comment author, assigned by username automatically
+    Auther - comment author, assigned by username automatically
     Email - user email, assigned by user email automatically
     Content - comment content
     Created_on - comment creation date, used to organise comments in order
@@ -119,14 +74,14 @@ to create and manage comments:
 class Comment(models.Model):
 
     post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')
-    name = models.CharField(max_length=80) 
-    email = models.EmailField()
+    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="commenter")
+    #name = models.CharField(max_length=80) 
+    #email = models.EmailField()
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
-    updated_on = models.DateTimeField(auto_now=True)
+    #updated_on = models.DateTimeField(auto_now=True)
     approved = models.BooleanField(default=False)
 
-   
     class Meta:
         """
         Order comments by their creation dates in ascending order
@@ -134,7 +89,7 @@ class Comment(models.Model):
         ordering = ['created_on']
 
     def __str__(self):
-        """Returns comment body and author name"""    
-        return f"Comment {self.body} by {self.name}"
+        """Returns comment body and author"""    
+        return f"Comment {self.body} by {self.author}"
 
 
