@@ -251,11 +251,19 @@ All HTML pages were validated using [W3C HTML Validator](https://validator.w3.or
 ## Technologies
 
 ## Credits
-User stories, https://github.com/rockroman/CI_PP4-Knowledge-Flow/blob/main/README.md?plain=1
-User stories, https://github.com/ShizukaDonaghue/happy-beans/tree/main
-CI Django blog, https://www.youtube.com/watch?v=YH--VobIA8c&t=1453s
+-User stories, https://github.com/rockroman/CI_PP4-Knowledge-Flow/blob/main/README.md?plain=1
+-User stories, https://github.com/ShizukaDonaghue/happy-beans/tree/main
+-CI Django blog, https://www.youtube.com/watch?v=YH--VobIA8c&t=1453s
+-Filter blog categories, https://www.youtube.com/watch?v=S9-Bt1JgRjQ
+-Edit delete comments, CI LMS https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+FSD101_WTS+3/courseware/713441aba05441dfb3a7cf04f3268b3f/21a16093c0084895a6073422447c3f7d/
 
+-All icons are taken from Font Awesome (http://fontawesome.io/) project.
+The Font Awesome font is licensed under the SIL OFL 1.1:
+- https://scripts.sil.org/OFL
 
+SVG icons source: https://github.com/encharm/Font-Awesome-SVG-PNG
+Font-Awesome-SVG-PNG is licensed under the MIT license (see file license
+in current folder).
 ## Process...
 
 **Challenges** 
