@@ -5,7 +5,6 @@
 <!-- index.html content starts here -->
 <div class="container-fluid">
     <div class="row">
-
         <!-- Blog Entries Column -->
         <div class="col-12 mt-3 left">
             <div class="row">
@@ -21,16 +20,11 @@
                                 <img class="card-img-top" src="{{ post.featured_image.url }}">
                                 {% endif %}
                                 <div class="image-flash">
-                                    <p class="author">Author: {{ post.author }}</p>
+                                    <p class="author">{{ post.category.name }}</p>
                                 </div>
                             </div>
                             <a href="{% url 'post_detail' post.slug %}" class="post-link">
                                 <h2 class="card-title">{{ post.title }}</h2>
-
-                                <p class="Category">{{ post.get_category_type_display }}</p>
-                                <p class="media">{{ post.get_media_type_display }}</p>
-                            
-
                                 <p class="card-text">{{ post.excerpt }}</p>
                             </a>
                             <hr />
