@@ -42,6 +42,9 @@ class PostDetail(View):
             comment.email = request.user.email
             comment.save()
             messages.success(request, "Your comment has been added.")
+
+            return HttpResponseRedirect(reverse('post_detail', args=[slug]))  # Redirect after saving
+
         else:
             messages.error(request, "There was an error with your comment.")
 
