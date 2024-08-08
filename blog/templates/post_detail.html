@@ -11,10 +11,9 @@
                 <h1>{{ post.title }}</h1>
                 <div class="image-container">
                     {% if "placeholder" in post.featured_image.url %}
-                    <img class="card-img-top"
-                        src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg">
+                        <img class="card-img-top" src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg">
                     {% else %}
-                    <img class="card-img-top" src="{{ post.featured_image.url }}">
+                        <img class="card-img-top" src="{{ post.featured_image.url }}">
                     {% endif %}
                     <div class="image-flash">
                         <p class="author">{{ post.category.name }}</p>
@@ -22,7 +21,6 @@
                 </div>
                 <hr>
                 <p class="card-text text-muted h6">{{ post.created_on }} | Author {{ post.author }}</p>
-           
                 <h1 class="post-title">{{ post.title }}</h1>
                 <p class="card-text">{{ post.excerpt }}</p>
                 <p class="card-text">{{ post.content | safe }}</p>
@@ -30,16 +28,16 @@
                     <div class="col-1">
                         <strong>
                             {% if user.is_authenticated %}
-                            <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
-                                {% csrf_token %}
-                                {% if liked %}
-                                <button type="submit" class="btn-like"><i class="fas fa-heart"></i></button>
-                                {% else %}
-                                <button type="submit" class="btn-like"><i class="far fa-heart"></i></button>
-                                {% endif %}
-                            </form>
+                                <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
+                                    {% csrf_token %}
+                                    {% if liked %}
+                                        <button type="submit" class="btn-like"><i class="fas fa-heart"></i></button>
+                                    {% else %}
+                                        <button type="submit" class="btn-like"><i class="far fa-heart"></i></button>
+                                    {% endif %}
+                                </form>
                             {% else %}
-                            <span class="text-secondary"><i class="far fa-heart"></i></span>
+                                <span class="text-secondary"><i class="far fa-heart"></i></span>
                             {% endif %}
                             <span class="text-secondary">{{ post.number_of_likes }}</span>
                         </strong>
@@ -57,17 +55,17 @@
             <h3>Comments:</h3>
             <div class="card-body">
                 {% for comment in comments %}
-                <div class="p-2 comments{% if not comment.approved and comment.author == user %} faded{% elif not comment.approved %} d-none{% endif %}">
-                    <p class="font-weight-bold">{{ comment.name }} <span class="text-muted">{{ comment.created_on }}</span> wrote:</p>
-                    <div id="comment{{ comment.id }}">{{ comment.body | linebreaks }}</div>
-                    {% if not comment.approved and comment.author == user %}
-                    <p class="approval">This comment is awaiting approval</p>
-                    {% endif %}
-                    {% if user.is_authenticated and comment.author == user %}
-                    <button class="btn btn-delete" comment_id="{{ comment.id }}">Delete</button>
-                    <button class="btn btn-edit" comment_id="{{ comment.id }}">Edit</button>
-                    {% endif %}
-                </div>
+                    <div class="p-2 comments{% if not comment.approved and comment.author == user %} faded{% elif not comment.approved %} d-none{% endif %}">
+                        <p class="font-weight-bold">{{ comment.name }} <span class="text-muted">{{ comment.created_on }}</span> wrote:</p>
+                        <div id="comment{{ comment.id }}">{{ comment.body | linebreaks }}</div>
+                        {% if not comment.approved and comment.author == user %}
+                            <p class="approval">This comment is awaiting approval</p>
+                        {% endif %}
+                        {% if user.is_authenticated and comment.author == user %}
+                            <button class="btn btn-delete" comment_id="{{ comment.id }}">Delete</button>
+                            <button class="btn btn-edit" comment_id="{{ comment.id }}">Edit</button>
+                        {% endif %}
+                    </div>
                 {% endfor %}
             </div>
         </div>
@@ -75,15 +73,15 @@
         <div class="col-md-4 card mb-4 mt-3">
             <div class="card-body">
                 {% if user.is_authenticated %}
-                <h3>Leave a comment:</h3>
-                <p>Posting as: {{ user.username }}</p>
-                <form method="post">
-                    {{ comment_form | crispy }}
-                    {% csrf_token %}
-                    <button type="submit" class="btn btn-signup btn-lg">Submit</button>
-                </form>
+                    <h3>Leave a comment:</h3>
+                    <p>Posting as: {{ user.username }}</p>
+                    <form method="post">
+                        {{ comment_form | crispy }}
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-signup btn-lg">Submit</button>
+                    </form>
                 {% else %}
-                <p>Log in to leave a comment</p>
+                    <p>Log in to leave a comment</p>
                 {% endif %}
             </div>
         </div>
