@@ -51,10 +51,16 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             {% for category in category_list %}
+
+                            {% if category.name != 'Default' %}  <!-- Check to hide default category -->
                             <a class="dropdown-item" href="/category/{{ category.name }}">
                                 {{ category.name }}
                             </a>
-                            {% endfor %}
+
+                        {% endif %}
+
+                        {% endfor %}
+
                         </div>
                     </li>
 
