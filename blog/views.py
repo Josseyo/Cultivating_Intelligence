@@ -20,6 +20,7 @@ class PostDetail(View):
         liked = post.likes.filter(id=request.user.id).exists()
         comment_form = CommentForm()  
 
+
         return render(request, "post_detail.html", {
             "post": post,
             "comments": comments,
@@ -32,16 +33,16 @@ class PostDetail(View):
         post = get_object_or_404(Post.objects.filter(status=1), slug=slug)
         comments = post.comments.filter(approved=True).order_by("-created_on")
         liked = post.likes.filter(id=request.user.id).exists()
-        
         comment_form = CommentForm(data=request.POST)
+
         if comment_form.is_valid():
             comment = comment_form.save(commit=False)
             comment.post = post
             comment.name = request.user.username
             comment.author = request.user
-            comment.email = request.user.email
+            #comment.email = request.user.email
             comment.save()
-            messages.success(request, "Your comment has been added.")
+            messages.success(request, "Your comment has been added and awaiting approval.")
 
             return HttpResponseRedirect(reverse('post_detail', args=[slug]))  # Redirect after saving
 
@@ -51,7 +52,7 @@ class PostDetail(View):
         return render(request, "post_detail.html", {
             "post": post,
             "comments": comments,
-            "comment_count": comments.count(),
+            "comment_count": comment.count,
             "liked": liked,
             "comment_form": comment_form,
             "commented": True,
@@ -85,7 +86,6 @@ def category_list(request):
         "category_list": category_list,
     }
     return context
-
 def comment_edit(request, slug, comment_id):
     if request.method == "POST":
         post = get_object_or_404(Post.objects.filter(status=1), slug=slug)
