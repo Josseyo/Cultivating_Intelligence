@@ -11,7 +11,7 @@
                 <h1>{{ post.title }}</h1>
                 <div class="image-container">
                     {% if post.featured_image and "placeholder" in post.featured_image.url %}
-                        <img class="card-img-top" src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" alt="Default Image">
+                        <img class="card-img-top" src="https://res.cloudinary.com/dtb7uvvew/image/upload/v1722843184/r1xenrocn59cvjwgzzj0.jpg" alt="Default Image">
                     {% elif post.featured_image %}
                         <img class="card-img-top" src="{{ post.featured_image.url }}" alt="{{ post.title }}">
                     {% endif %}
