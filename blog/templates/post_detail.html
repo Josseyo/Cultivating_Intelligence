@@ -10,20 +10,19 @@
             <div class="card-body">
                 <h1>{{ post.title }}</h1>
                 <div class="image-container">
-                    {% if "placeholder" in post.featured_image.url %}
-                        <img class="card-img-top" src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg">
-                    {% else %}
-                        <img class="card-img-top" src="{{ post.featured_image.url }}">
+                    {% if post.featured_image and "placeholder" in post.featured_image.url %}
+                        <img class="card-img-top" src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" alt="Default Image">
+                    {% elif post.featured_image %}
+                        <img class="card-img-top" src="{{ post.featured_image.url }}" alt="{{ post.title }}">
                     {% endif %}
                     <div class="image-flash">
                         <p class="author">{{ post.category.name }}</p>
                     </div>
                 </div>
                 <hr>
-                <p class="card-text text-muted h6">{{ post.created_on }} | Author {{ post.author }}</p>
-                <h1 class="post-title">{{ post.title }}</h1>
+                <p class="card-text text-muted h6">{{ post.created_on }} | Author: {{ post.author.username }}</p>
                 <p class="card-text">{{ post.excerpt }}</p>
-                <p class="card-text">{{ post.content | safe }}</p>
+                <p class="card-text">{{ post.content|safe }}</p>
                 <div class="row">
                     <div class="col-1">
                         <strong>
@@ -56,19 +55,21 @@
             <div class="card-body">
                 {% for comment in comments %}
                     <div class="p-2 comments{% if not comment.approved and comment.author == user %} faded{% elif not comment.approved %} d-none{% endif %}">
-                        <p class="font-weight-bold">{{ comment.name }} <span class="text-muted">{{ comment.created_on }}</span> wrote:</p>
-                        <div id="comment{{ comment.id }}">{{ comment.body | linebreaks }}</div>
+                        <p class="font-weight-bold">{{ comment.author.username }} <span class="text-muted">{{ comment.created_on }}</span> wrote:</p>
+                        <div id="comment{{ comment.id }}">{{ comment.body|linebreaks }}</div>
+
                         {% if not comment.approved and comment.author == user %}
                             <p class="approval">This comment is awaiting approval</p>
                         {% endif %}
+
                         {% if user.is_authenticated and comment.author == user %}
-                            <button class="btn btn-delete" comment_id="{{ comment.id }}">Delete</button>
-                            <button class="btn btn-edit" comment_id="{{ comment.id }}">Edit</button>
+                            <button class="btn btn-delete" data-comment-id="{{ comment.id }}">Delete</button>
+                            <button class="btn btn-edit" data-comment-id="{{ comment.id }}">Edit</button>
                         {% endif %}
                     </div>
                 {% endfor %}
             </div>
-        </div>
+        </div> 
 
         <div class="col-md-4 card mb-4 mt-3">
             <div class="card-body">
@@ -76,8 +77,8 @@
                     <h3>Leave a comment:</h3>
                     <p>Posting as: {{ user.username }}</p>
                     <form method="post">
-                        {{ comment_form | crispy }}
                         {% csrf_token %}
+                        {{ comment_form|crispy }}
                         <button type="submit" class="btn btn-signup btn-lg">Submit</button>
                     </form>
                 {% else %}
