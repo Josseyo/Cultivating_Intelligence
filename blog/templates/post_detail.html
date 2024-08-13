@@ -63,9 +63,19 @@
                         {% endif %}
 
                         {% if user.is_authenticated and comment.author == user %}
-                            <button class="btn btn-delete" data-comment-id="{{ comment.id }}">Delete</button>
-                            <button class="btn btn-edit" data-comment-id="{{ comment.id }}">Edit</button>
-                        {% endif %}
+                            <button class="btn btn-delete" comment_id="{{ comment.id }}">Delete</button>
+                            <button class="btn btn-edit" comment_id="{{ comment.id }}">Edit</button>
+                           
+                            {% endif %}
+
+                           <!-- {% if user.is_authenticated and comment.author == user %}
+                            <form action="{% url 'comment_edit' post.slug comment.id %}" method="POST" style="display:inline;">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-edit">Edit</button>
+                            </form>
+                            <button class="btn btn-delete" comment_id="{{ comment.id }}">Delete</button>
+                            {% endif %}-->
+                        
                     </div>
                 {% endfor %}
             </div>
