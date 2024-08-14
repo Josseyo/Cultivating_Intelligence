@@ -16,9 +16,9 @@ class PostAdmin(SummernoteModelAdmin):
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
     """Admin panel for comments"""
-    list_display = ('post', 'author', 'body', 'created_on', 'approved')
-    list_filter = ('author', 'created_on')
-    search_fields = ['name', 'email', 'body']
+    list_display = ('post', 'author', 'approved', 'created_on', 'body', 'updated_on',)
+    list_filter = ('approved', 'author', 'created_on', 'updated_on',)
+    search_fields = ['author', 'post', 'body']
     actions = ['approve_comments']
 
     def approve_comments(self, request, queryset):
