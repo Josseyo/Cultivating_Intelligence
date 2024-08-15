@@ -1,6 +1,5 @@
-from django.shortcuts import render, get_object_or_404, reverse
-#from django.urls import reverse_lazy
-from django.views import generic
+from django.shortcuts import render, get_object_or_404
+from django.urls import reverse
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 from .models import Post, Comment, Category
@@ -8,7 +7,7 @@ from .forms import CommentForm
 
 #from django.views.generic import ListView
 #from django.views.generic.edit import UpdateView, DeleteView
-from django.views import View
+from django.views import generic, View
 
 # Create your views here.
 
@@ -75,7 +74,7 @@ class PostDetail(View):
             comment.name = request.user.username
             comment.author = request.user
             comment.save()
-            messages.success(request, "Your comment has been added and is awaiting approval.")
+            messages.success(request, "Your comment has been added.")
 
             return HttpResponseRedirect(reverse('post_detail', args=[slug]))  # Redirect after saving
 
@@ -179,11 +178,13 @@ def comment_edit(request, slug, comment_id):
             comment_form.save()
             messages.success(request, 'Comment Updated!')
             return HttpResponseRedirect(reverse('post_detail', args=[slug]))
-        #else:
-            #messages.error(request, 'Error updating comment!')
+        else:
+            messages.error(request, 'Error updating comment!')
+    else:
+        # If not POST, create a form instance with the existing comment data
+        comment_form = CommentForm(instance=comment)
 
-    # Render the comment edit form if the request is not POST
-    comment_form = CommentForm(instance=comment)  # Pre-fill form with existing comment data
+    # Render the comment edit form
     return render(request, "edit_comment.html", {
         "post": post,
         "comment_form": comment_form,
