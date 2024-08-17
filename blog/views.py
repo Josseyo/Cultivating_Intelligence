@@ -178,11 +178,14 @@ def comment_edit(request, slug, comment_id):
             comment_form.save()
             messages.success(request, 'Comment Updated!')
             return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+        #else:
+            #messages.error(request, 'Error updating comment!')
         else:
-            messages.error(request, 'Error updating comment!')
-    else:
         # If not POST, create a form instance with the existing comment data
-        comment_form = CommentForm(instance=comment)
+            comment_form = CommentForm(instance=comment)
+        
+    else:
+        messages.error(request, 'Error updating comment!')
 
     # Render the comment edit form
     return render(request, "edit_comment.html", {
