@@ -6,48 +6,43 @@
 <div class="container-fluid">
     <div class="row">
         <!-- Category title -->
-        <category class="mt-auto py-3 dark-bg">
+        <div class="mt-auto py-3 dark-bg">
             <h1 class="m-0 text-center text-white">{{ catlist.cat }}</h1>
-        </category>
+        </div>
         <!-- Blog Entries Column -->
         <div class="col-12 mt-3 left">
             <div class="row">
                 {% for post in catlist.posts %}
-                <!--{{ post.slug }}   Debug line to check slug values -->
-                 <!--{{catlist.cat}}-->
                 <div class="col-md-4">
                     <div class="card mb-4">
-                        <!--{% if post.slug %}
-                            <a class="text-dark" href="{% url 'post_detail' post.slug %}">
-                        {% else %}
-                            <span class="text-muted">No link available</span>
-                        {% endif %}-->
-                            <div class="card-body">
-                                <div class="image-container">
-                                    {% if "placeholder" in post.featured_image.url %}
-                                    <img class="card-img-top"
-                                        src="https://res.cloudinary.com/dtb7uvvew/image/upload/v1722843184/r1xenrocn59cvjwgzzj0.jpg">
-                                    {% else %}
-                                    <img class="card-img-top" src="{{ post.featured_image.url }}">
-                                    {% endif %}
-                                    <div class="image-flash">
-                                        <p class="author">{{ post.category.name }}</p>
-                                    </div>
+                        <div class="card-body">
+                            <div class="image-container">
+                                {% if "placeholder" in post.featured_image.url %}
+                                <img class="card-img-top"
+                                    src="https://res.cloudinary.com/dtb7uvvew/image/upload/v1722843184/r1xenrocn59cvjwgzzj0.jpg"
+                                    alt="Placeholder image for {{ post.title }}">
+                                {% else %}
+                                <img class="card-img-top" src="{{ post.featured_image.url }}" 
+                                    alt="Image for {{ post.title }}">
+                                {% endif %}
+                                <div class="image-flash">
+                                    <p class="author">{{ post.category.name }}</p>
                                 </div>
-                                <a href="{% url 'post_detail' post.slug %}" class="post-link">
-                                    <h2 class="card-title">{{ post.title }}</h2>
-                                    <p class="card-text">{{ post.excerpt }}</p>
-                                </a>
-                                <hr />
-                                <p class="card-text text-muted h6">{{ post.created_on }} 
-                                    <i class="far fa-heart"></i> {{ post.number_of_likes }} <i class="far fa-comments"></i> {{ comment_count }}</p>
                             </div>
+                            <a href="{% url 'post_detail' post.slug %}" class="post-link">
+                                <h2 class="card-title">{{ post.title }}</h2>
+                                <p class="card-text">{{ post.excerpt }}</p>
+                            </a>
+                            <hr>
+                            <p class="card-text text-muted h6">{{ post.created_on }} 
+                                <i class="far fa-heart"></i> {{ post.number_of_likes }} <i class="far fa-comments"></i> {{ comment_count }}</p>
                         </div>
                     </div>
-                    {% if forloop.counter|divisibleby:3 %}
+                </div>
+                {% if forloop.counter|divisibleby:3 %}
                 </div>
                 <div class="row">
-                    {% endif %}
+                {% endif %}
                 {% endfor %}
                 </div>
             </div>
@@ -62,8 +57,9 @@
             <li><a href="?page={{ page_obj.next_page_number }}" class="page-link">NEXT &raquo;</a></li>
             {% endif %}
         </ul>
-    </nav>
-    {% endif %}
+        </nav>
+        {% endif %}
+    </div>
 </div>
 
 {% endblock %}
