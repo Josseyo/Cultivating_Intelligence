@@ -14,10 +14,11 @@
                         <div class="card-body">
                             <div class="image-container">
                                 {% if "placeholder" in post.featured_image.url %}
-                                <img class="card-img-top"
-                                    src="https://res.cloudinary.com/dtb7uvvew/image/upload/v1722843184/r1xenrocn59cvjwgzzj0.jpg">
-                                {% else %}
-                                <img class="card-img-top" src="{{ post.featured_image.url }}">
+                                <img class="card-img-top" src="https://res.cloudinary.com/dtb7uvvew/image/upload/v1722843184/r1xenrocn59cvjwgzzj0.jpg"
+                                    alt="Placeholder image for {{ post.title }}">
+                                    {% else %}
+                                <img class="card-img-top" src="{{ post.featured_image.url }}"
+                                    alt="Featured image for {{ post.title }}">
                                 {% endif %}
                                 <div class="image-flash">
                                     <p class="author">{{ post.category.name }}</p>
@@ -27,7 +28,7 @@
                                 <h2 class="card-title">{{ post.title }}</h2>
                                 <p class="card-text">{{ post.excerpt }}</p>
                             </a>
-                            <hr />
+                            <hr>
                             <p class="card-text text-muted h6">{{ post.created_on }} <i class="far fa-heart"></i> {{ post.number_of_likes }}</p>
                         </div>
                     </div>
@@ -53,5 +54,4 @@
     </nav>
     {% endif %}
 </div>
-
 {% endblock %}
