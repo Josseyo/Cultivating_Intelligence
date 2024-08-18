@@ -11,7 +11,7 @@
 
 <head>
     <title>Cultivating Intelligence</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Google Fonts CSS -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -56,7 +56,7 @@
                             {% for category in category_list %}
 
                             {% if category.name != 'Default' %}  <!-- Check to hide default category -->
-                            <a class="dropdown-item" href="/category/{{ category.name }}">
+                            <a class="dropdown-item" href="/category/{{ category.name|urlencode }}">
                                 {{ category.name }}
                             </a>
                             {% endif %}
