@@ -65,23 +65,16 @@
 ## Design
 
 ### Colors
+<details><summary>Click to view colors</summary>
+<img src="docs/images/colors.png">
 
-| Element               | Color                     | Hex Code   |
-|-----------------------|---------------------------|------------|
-| Background                 | Light Gray                      | #XXXXXX   |
-| Title                 | Blue                      | #233D4D   |
-| Headlines             | Orange                    | #FE7F2D   |
-| Excerpt               | Turquoise                 | #619B8A   |
-| Body Text             | Dark Gray                 | #333333   |
-| Likes                 | Yellow                    | #FCCA46   |
-| Categories            | Green                     | #A1C181   |
-| Comments              | Turquoise                 | #619B8A   |
-| Edit Button           | Orange                    | #FE7F2D   |
-| Delete Button         | Red                       | #FF4D4D   |
-| Create Account Button  | Green                     | #A1C181   |
-| Login Button          | Blue                      | #233D4D   |
-| Logout Button         | Red                       | #FF4D4D   |
+- **Blue** #233D4D
+- **Orange** #FE7F2D
+- **Yellow** #FCCA46
+- **Green** #A1C181
+- **Turkose** #619B8A
 
+[Colors](docs/images/colors.png)
 
 These colors have been chosen based on their psychological effects, aiming to enhance user experience and support individuals with Attention Deficit Hyperactivity Disorder (ADHD).
 
@@ -92,8 +85,6 @@ These colors have been chosen based on their psychological effects, aiming to en
 ### 2. Orange (#FE7F2D)
 - **Energy and Enthusiasm**: Orange stimulates mental activity and can make the blog feel more inviting and engaging. 
 - **Usage**: Use for section headlines to grab attention and energize the content.
-- **(Orange (#FE7F2D) for edit, Red (e.g., #FF4D4D) for delete.
-Usage: Use orange for edit buttons to signify action, and a contrasting red for delete buttons to indicate caution.)**
 
 ### 3. Yellow (#FCCA46)
 - **Optimism and Attention-Grabbing**: Yellow is uplifting and can enhance mood, making the reading experience more enjoyable. This bright hue effectively highlights important information or calls to action, without overwhelming the user.
@@ -108,16 +99,6 @@ Usage: Use orange for edit buttons to signify action, and a contrasting red for 
 
 The selected color palette is designed to create an engaging and supportive environment for users, particularly those with ADHD, ensuring a cohesive and user-friendly interface that enhances readability and interaction throughout the blog.
 
-- **Blue** #233D4D
-- **Orange** #FE7F2D
-- **Yellow** #FCCA46
-- **Green** #A1C181
-- **Turkose** #619B8A
-
-[Colors](docs/images/colors.png)
-
-<details><summary>Click to view colors</summary>
-<img src="docs/images/colors.png">
 </details>
 
 ### Fonts
@@ -127,49 +108,9 @@ The selected color palette is designed to create an engaging and supportive envi
 ## Database
 I have used [CI Database](https://dbs.ci-dbs.net/) for the project.
 
-### Entity-Relationship Diagram (ERD)
+### Entity-Relationship Diagram (ERD)  
 
-  User {
-    int id PK
-    string username
-    string email
-  }
-  
-  Category {
-    int id PK
-    string name
-  }
-  
-  Post {
-    int id PK
-    string title
-    string slug
-    int status
-    string excerpt
-    string content
-    datetime created_on
-    datetime updated_on
-    int likes_count
-  }
-  
-  Comment {
-    int id PK
-    string body
-    datetime created_on
-    boolean approved
-  }
-  
-  User ||--o{ Post : "writes" }
-  User ||--o{ Comment : "writes"}
-  Category ||--o{ Post : "categorizes" }
-  Post ||--o{ Comment : "receives" }
-  User ||--o{ Post : "likes" }
-
-
-<details><summary>Click to view ERD</summary>
-<img src="docs/images/models/blog_erd.png">
-
-- The database structure is based on a PostgreSQL model, representing tables, columns, relationships, and constraints.
+The database structure is based on a PostgreSQL model, representing tables, columns, relationships, and constraints.
 
 ### Database Models
 
@@ -181,10 +122,14 @@ I have used [CI Database](https://dbs.ci-dbs.net/) for the project.
 
 ### ERD Relationships
 
-- One-to-Many: User to Post
-- One-to-Many: User to Comment
-- One-to-Many: Post to Comment
-- Many-to-Many: Post to User (likes)
+- **User to Post**: One-to-Many (A user can have multiple posts; each post is associated with one user.)
+- **User to Comment**: One-to-Many (A user can have multiple comments; each comment is associated with one user.)
+- **Post to Comment**: One-to-Many (A post can have multiple comments; each comment is associated with one post.)
+- **Category to Post**: One-to-Many (A post belongs to one category; a category can have multiple posts.)
+
+<details><summary>Click to view ERD</summary>
+<img src="docs/images/models/blog_erd.png">
+</details>
 
 ## Code Structure
 
@@ -221,44 +166,52 @@ A Kanban board was created using GitHub Projects to manage user stories and the 
 - **Could Have**: Nested comments for hierarchical discussions.
 - **Tags**: Allow users to tag posts for easier searching.
 
+
 ## Testing
-***
-- The flow was tested during and post development
-    - Device Testing
-    - Browser Compatibility
-    - Manual Testing
+
+The flow was tested during and post development
+
+   - Device Testing
+   - Browser Compatibility
+   - Manual Testing
+
+---
 
 ### Code Validation
 
-- **HTML**: Validated using [W3C HTML Validator](https://validator.w3.org/).
-### CSS
-- [Jigsaw W3 Validator](https://jigsaw.w3.org/css-validator/)was used  to validate the css in the project
-    - web app passed validator with no errors. 
-    <details><summary>Style.css</summary>
-    <img src="docs/validation/html-css/valid-css.png" width="800">
-    </details>
+- **HTML** Validated using [W3C HTML Validator](https://validator.w3.org/)
+- **CSS** Validated using [Jigsaw W3 Validator](https://jigsaw.w3.org/css-validator/)
+- **Javascript** validated using [JS hint](https://jshint.com)
+- **Python** validated using [CI Python Linter](https://pep8ci.herokuapp.com/)
+- **Performance** validated using [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+- **Accessibility** validated using [Wave Validator](https://wave.webaim.org/) 
+
+[Terminal errors fixes](https://docs.google.com/document/d/1ebW5cHddPkr2NpX6HFFQn2LsT-bAh9Y6OB7q3mzyrgo/edit?usp=sharing)
+
+[Validation errors and fixes](https://docs.google.com/document/d/1E_De--nyuZ5WqO-qT4h3DGXI8gPx17r_KLHbBCgbNo0/edit?usp=sharing)
+
+### Web app passed validators with no errors. 
 
 ### Html
-- [WC3 Validator](https://validator.w3.org/) was used to validate the html in the project
 
-- Note : all info on validator pages are related with using cloudinary template tags for rendering user uploaded images and there for trailing slash cant be removed
-    
+<details><summary>Click to view html-validation errors</summary>
+<img src="docs/images/validation/home-html-errors.png" width="800" >>
+</details>
 
 <details><summary>Home</summary>
-<img src="docs/validation/html-css/home-html-valid.png" width="800" >
+<img src="docs/images/validation/home-html-valid.png" width="800" >
 </details>
 
 <details><summary>Register</summary>
-<img src="docs/validation/html-css/signup-valid.png" width="800" >
+<img src="docs/images/validation/signup-html-valid.png" width="800" >
 </details>
 
 <details><summary>Login</summary>
-<img src="docs/validation/html-css/login-valid.png" width="800" >
+<img src="docs/images/validation/login-html-valid.png" width="800" >
 </details>
 
-
-<details><summary>Blog</summary>
-<img src="docs/validation/html-css/blog.png" width="800" >
+<details><summary>Logout</summary>
+<img src="docs/images/validation/logout-html-valid.png" width="800" >
 </details>
 
 <details><summary>Blog detail</summary>
@@ -273,85 +226,94 @@ A Kanban board was created using GitHub Projects to manage user stories and the 
 <img src="docs/validation/html-css/blog-edit.png" width="800">
 </details>
 
+### CSS
+[Jigsaw W3 Validator](https://jigsaw.w3.org/css-validator/) was used to validate the css styling
+
+<details><summary>Style.css</summary><img src="docs/validation/html-css/valid-css.png" width="800">
+</details>
 
    
 ### Javascript
-- [JShint](https://jshint.com/) was used to validate custom script file
+[JShint](https://jshint.com/) was used to validate the custom script file: comments.js
 
-    <details><summary>Js file</summary>
-    <img src="docs/validation/python-js/custom-js.png" width="800" >
-    </details>
+
+<details><summary>Js file</summary>
+<img src="docs/validation/comments-js-valid.png" width="800">
+</details>
+
 
 ### Python
-- [CI Python Linter](https://pep8ci.herokuapp.com/) to check  Python code for validity and conventions
+[CI Python Linter](https://pep8ci.herokuapp.com/) to check  Python code for validity and conventions
 
-    <details><summary>Home app</summary>
+<details><summary>Blog app</summary>
 
-    <details><summary>views.py</summary>
-    <img src="docs/validation/python-js/home-views.png" width="800" >
-    </details>
+   <details><summary>admin.py</summary>
+   <img src="docs/validation/python-js/home-views.png" width="800" >
+   </details>
 
-    <details><summary>urls.py</summary>
-    <img src="docs/validation/python-js/home-url.png" width="800" >
-    </details>
+   <details><summary>apps.py</summary>
+   <img src="docs/validation/python-js/home-views.png" width="800" >
+   </details>
 
-    <details><summary>forms.py</summary>
-    <img src="docs/validation/python-js/home-forms.png" width="800" >
-    </details>
- 
-    </details>
+   <details><summary>forms.py</summary>
+   <img src="docs/validation/python-js/home-views.png" width="800" >
+   </details>
 
-    ***
+   <details><summary>models.py</summary>
+   <img src="docs/validation/python-js/home-views.png" width="800" >
+   </details>
 
-    <details><summary>cultivating_intelligence_blog app</summary>
+   <details><summary>tests.py</summary>
+   <img src="docs/validation/python-js/home-views.png" width="800" >
+   </details>
 
-    <details><summary>views.py</summary>
-    <img src="docs/validation/python-js/blog-views2.png" width="800" >
-    </details>
+   <details><summary>urls.py</summary>
+   <img src="docs/validation/python-js/home-url.png" width="800" >
+   </details>
 
-    <details><summary>urls.py</summary>
-    <img src="docs/validation/python-js/blog-urls.png" width="800" >
-    </details>
+   <details><summary>views.py</summary>
+   <img src="docs/validation/python-js/home-forms.png" width="800" >
+   </details>
 
-    <details><summary>forms.py</summary>
-    <img src="docs/validation/python-js/blog-forms.png" width="800" >
-    </details>
+</details>
 
-    <details><summary>models.py</summary>
-    <img src="docs/validation/python-js/blog-models.png" width="800" >
-    </details> 
-    </details>
+   ***
 
-    ***
+<details><summary>cultivating_intelligence_blog app</summary>
 
-    <details><summary>categories app</summary>
+   <details><summary>asgi.py</summary>
+   <img src="docs/validation/python-js/blog-views2.png" width="800" >
+   </details>
 
-    <details><summary>views.py</summary>
-    <img src="docs/validation/python-js/categories-views.png" width="800" >
-    </details>
+   <details><summary>settings.py</summary>
+   <img src="docs/validation/python-js/blog-views2.png" width="800" >
+   </details>
 
-    <details><summary>urls.py</summary>
-    <img src="docs/validation/python-js/category-url.png" width="800" >
-    </details>
+   <details><summary>urls.py</summary>
+   <img src="docs/validation/python-js/blog-urls.png" width="800" >
+   </details>
 
-    <details><summary>models.py</summary>
-    <img src="docs/validation/python-js/categories-models.png" width="800" >
-    </details>
-    </details>
+   <details><summary>wsgi.py</summary>
+   <img src="docs/validation/python-js/blog-forms.png" width="800" >
+   </details>
 
-    ***   
+   <details><summary>models.py</summary>
+   <img src="docs/validation/python-js/blog-models.png" width="800" >
+   </details> 
+</details>
+
 
 ### Lighthouse
 
-- [Lighthouse](https://developers.google.com/web/tools/lighthouse/) used for analyzing performance, accessibility and SEO for the project. Below are the results of the analysis:
+[Lighthouse](https://developers.google.com/web/tools/lighthouse/) used for analyzing performance, accessibility and SEO for the project. Below are the results of the analysis:
  
 <details><summary>Home Desktop-screen</summary>
 <img src="docs/validation/lighthouse/home-desk.png" >
 
-</details>
-<details><summary>Home Mobile-screen</summary>
-<img src="docs/validation/lighthouse/Home-mob.png" >
-</details>
+   </details>
+   <details><summary>Home Mobile-screen</summary>
+   <img src="docs/validation/lighthouse/Home-mob.png" >
+   </details>
 
 <details><summary>Register page Desktop-screen</summary>
 <img src="docs/validation/lighthouse/register-desk.png">
@@ -393,7 +355,7 @@ A Kanban board was created using GitHub Projects to manage user stories and the 
 </details>
 
 ### Wave
- [Wave Validator](https://wave.webaim.org/) to evaluate accessibility
+[Wave Validator](https://wave.webaim.org/) to evaluate accessibility
 
 <details><summary>Home</summary>
 <img src="docs/validation/wave/home-pg.png" width="800" height="1200" >
@@ -424,10 +386,9 @@ A Kanban board was created using GitHub Projects to manage user stories and the 
 </details>
 
 ## Testing
-***
 
-- The project was tested during and post development and all
-results for 
+
+The project was tested during and post development
     - Device Testing
     - Browser Compatibility
     - Manual Testing
@@ -444,7 +405,8 @@ Before deploying to Heroku, ensure you have the following variables prepared:
 - **SECRET_KEY** (You can generate one [here](https://miniwebtool.com/django-secret-key-generator/))
 - **CLOUDINARY_URL** (After logging in to the Cloudinary website, copy the 'Cloudinary URL' from your account dashboard)
 
-### Step-by-step Instructions
+
+<details><summary>Deploying to Heroku - step by step </summary>
 
 1. **Create `env.py`**: At the root level of your project, create a file named `env.py` and add the following lines, replacing the placeholders with your actual values:
 
@@ -466,11 +428,11 @@ Before deploying to Heroku, ensure you have the following variables prepared:
 4. **Set Up Environment Variables**:
    - Navigate to the 'Settings' tab of your newly created app.
    - Click on 'Reveal Config Vars' and add the following environment variables:
-     - `DATABASE_URL`: Your Database URL
-     - `SECRET_KEY`: Your generated secret key
-     - `CLOUDINARY_URL`: Your Cloudinary URL
-     - `DISABLE_COLLECTSTATIC`: Set this variable to `1` (this can be removed after the initial deployment)
-     - `PORT`: Set this variable to `8000`
+   - `DATABASE_URL`: Your Database URL
+   - `SECRET_KEY`: Your generated secret key
+   - `CLOUDINARY_URL`: Your Cloudinary URL
+   - `DISABLE_COLLECTSTATIC`: Set this variable to `1` (this can be removed after the initial deployment)
+   - `PORT`: Set this variable to `8000`
 
 5. **Deploy Your App**:
    - Select the 'Deploy' tab from the dashboard.
@@ -481,9 +443,11 @@ Before deploying to Heroku, ensure you have the following variables prepared:
 6. **Start the Deployment Process**:
    - Click on the option you chose, and you should see the deployment process begin.
 
+</details>
+
 ---
 
-## Forking the GitHub Repository
+<details><summary>Forking the GitHub Repository</summary>
 
 1. **Log In or Sign Up**:
    - Go to [GitHub](https://github.com/) and log in or create an account.
@@ -495,9 +459,11 @@ Before deploying to Heroku, ensure you have the following variables prepared:
    - Click the "Fork" button in the top right corner.
    - A copy of the repository will be created in your own GitHub account.
 
+</details>
+
 ---
 
-## Cloning a GitHub Repository
+<details><summary>Cloning a GitHub Repository</summary>
 
 1. **Go to the Repository**:
    - Visit the [GitHub repository](https://github.com/Josseyo/Cultivating_Intelligence).
@@ -524,8 +490,9 @@ Before deploying to Heroku, ensure you have the following variables prepared:
 7. **Press Enter**:
    - Hit Enter to create your local clone of the repository.
 
----
+</details>
 
+---
 
 ## Issues/Improvements
 
@@ -540,6 +507,8 @@ Before deploying to Heroku, ensure you have the following variables prepared:
 - User Stories Reference: [CI Blog user stories](https://github.com/Code-Institute-Solutions/BlogUserStories/blob/main/userstories.md)
 - User Stories Reference: [GitHub Repository Rockroman](https://github.com/rockroman/CI_PP4-Knowledge-Flow/blob/main/README.md?plain=1)
 - CI Django Blog Tutorial: [YouTube Video](https://www.youtube.com/watch?v=YH--VobIA8c&t=1453s)
+
+### Fonts
 - Font Awesome: [Font Awesome](http://fontawesome.io/)
 
 ### Imagery
