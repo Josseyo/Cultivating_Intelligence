@@ -4,7 +4,7 @@ from cloudinary.models import CloudinaryField
 # Create your models here.
 
 
-class About(models.Model):
+class Contact(models.Model):
     """
     Stores a text about when and why to get in contact
     """
