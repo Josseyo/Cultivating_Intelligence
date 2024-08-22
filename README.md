@@ -1,4 +1,4 @@
-
+  
 ---
 
 # Cultivating Intelligence
@@ -30,15 +30,18 @@
 
 ## Wireframes
 
-*(Add wireframe images or links here)*
+[Wireframes](https://docs.google.com/presentation/d/11BzOLZs3T5GmIjfjKEP-i_4tZkhj9UXhWSku1D6myPE/edit#slide=id.g2f107aab73f_0_217)
 
 ## Features
 
 - User registration and login
-- Post creation, editing, and deletion
+- Comment creation, editing, and deletion
 - Like and comment functionality
 - Category filtering for posts
+- Contact view for collaboration request
 - Admin panel for managing content
+- Custom 404 view
+- Cookies
 
 ## UX Design
 
@@ -198,6 +201,8 @@ The flow was tested during and post development
 <img src="docs/images/validation/home-html-errors.png" width="800" >>
 </details>
 
+#### HTML validated without errors
+
 <details><summary>Home</summary>
 <img src="docs/images/validation/home-html-valid.png" width="800" >
 </details>
@@ -215,12 +220,11 @@ The flow was tested during and post development
 </details>
 
 <details><summary>Blog detail</summary>
-<img src="docs/validation/html-css/blog-detail-valid.png" width="800" >
+<img src="docs/images/validation/blog-detail-html-valid.png" width="800" >
 </details>
 
 <details><summary>Category</summary>
-<img src="docs/validation/html-css/category-valid.png" width="800" >
-</details>
+<img src="docs/images/validation/category-html-valid.png" width="800" >
 
 <details><summary>Comment ad/edit/delete</summary>
 <img src="docs/validation/html-css/blog-edit.png" width="800">
@@ -229,7 +233,19 @@ The flow was tested during and post development
 ### CSS
 [Jigsaw W3 Validator](https://jigsaw.w3.org/css-validator/) was used to validate the css styling
 
-<details><summary>Style.css</summary><img src="docs/validation/html-css/valid-css.png" width="800">
+#### CSS validated without errors
+
+
+<details><summary>Blog detail</summary>
+<img src="docs/images/validation/css-blog-detail-valid.png" width="800" >
+
+[Validation details CSS - Home](http://jigsaw.w3.org/css-validator/validator?lang=sv&profile=css3svg&uri=https%3A%2F%2Fcultivating-intelligence-1ead7384db49.herokuapp.com%2Fadhd-always-deeply-highly-dedicated%2F&usermedium=all&vextwarning=&warning=1)
+
+<img src="docs/images/validation/css-home-valid.png" width="800" >
+
+[Validation details CSS - Post detail](http://jigsaw.w3.org/css-validator/validator?lang=sv&profile=css3svg&uri=https%3A%2F%2Fcultivating-intelligence-1ead7384db49.herokuapp.com%2F&usermedium=all&vextwarning=&warning=1)
+
+
 </details>
 
    
@@ -507,6 +523,7 @@ Before deploying to Heroku, ensure you have the following variables prepared:
 - User Stories Reference: [CI Blog user stories](https://github.com/Code-Institute-Solutions/BlogUserStories/blob/main/userstories.md)
 - User Stories Reference: [GitHub Repository Rockroman](https://github.com/rockroman/CI_PP4-Knowledge-Flow/blob/main/README.md?plain=1)
 - CI Django Blog Tutorial: [YouTube Video](https://www.youtube.com/watch?v=YH--VobIA8c&t=1453s)
+- How to create a custom 404 error page: [makeuseof.com] https://www.makeuseof.com/create-custom-404-error-page-django/
 
 ### Fonts
 - Font Awesome: [Font Awesome](http://fontawesome.io/)
