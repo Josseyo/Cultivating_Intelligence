@@ -5,7 +5,7 @@ from .forms import CollaborateForm
 # Create your views here.
 
 
-def about(request):
+def contact_view(request):
     """
     Allow users  to send collaboration requests.
 
@@ -19,14 +19,13 @@ def about(request):
             collaborate_form.save()
             messages.add_message(
                 request, messages.SUCCESS,
-                'Message received! You can expect a respond within 2 working days.'
+                'Message received! You can expect a response within 2 working days.'
             )
-    about = About.objects.all().order_by('-updated_on').first()
+    contact = Contact.objects.all().order_by('-updated_on').first()
     collaborate_form = CollaborateForm()
 
     return render(
         request,
-        "contact/contact.html",
-        {"contact": contact,
-         "collaborate_form": collaborate_form},
+        "contact.html",
+        {"contact": contact, "collaborate_form": collaborate_form},
     )
