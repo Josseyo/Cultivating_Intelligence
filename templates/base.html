@@ -28,6 +28,27 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <!-- Cookies -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+    <script>
+         document.addEventListener("DOMContentLoaded", function() {
+            window.cookieconsent.initialise({
+                palette: {
+                    popup: { background: "#AFDBF6" },
+                    button: { background: "#F4F4F4" }
+                },
+                theme: "edgeless",
+                content: {
+                        header: "We use cookies",
+                        message: "This website uses cookies to ensure you get the best experience.",
+                        dismiss: "I agree",
+                    }
+                });
+            });
+    </script>
+
 </head>
 
 <body class="d-flex flex-column h-100 main-bg">
