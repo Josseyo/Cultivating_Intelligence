@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 {% block title %}Cultivating Intelligence | Home{% endblock %}
 {% block content %}
 
@@ -14,8 +15,8 @@
                         <div class="card-body">
                             <div class="image-container">
                                 {% if "placeholder" in post.featured_image.url %}
-                                <img class="card-img-top" src="https://res.cloudinary.com/dtb7uvvew/image/upload/v1722843184/r1xenrocn59cvjwgzzj0.jpg"
-                                    alt="Placeholder image for {{ post.title }}">
+                                <img class="card-img-top" src="{% static 'images/default.jpg' %}"
+                                    alt="Placeholder image">
                                     {% else %}
                                 <img class="card-img-top" src="{{ post.featured_image.url }}"
                                     alt="Featured image for {{ post.title }}">
