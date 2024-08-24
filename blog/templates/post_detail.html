@@ -11,7 +11,7 @@
                 <h1>{{ post.title }}</h1>
                 <div class="image-container">
                     {% if post.featured_image and "placeholder" in post.featured_image.url %}                    
-                        <img src="{% static 'images/default.jpg' %}" class="scale" alt="placeholder">
+                        <img src="{% static 'images/default.webp' %}" class="scale" alt="{{ post.title }}">
                     {% elif post.featured_image %}
                         <img class="card-img-top" src="{{ post.featured_image.url }}" alt="{{ post.title }}">
                     {% endif %}
