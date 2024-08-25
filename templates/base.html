@@ -34,24 +34,7 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
     <!-- Cookies -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            window.cookieconsent.initialise({
-                palette: {
-                    popup: { background: "#AFDBF6" },
-                    button: { background: "#F4F4F4" }
-                },
-                theme: "edgeless",
-                content: {
-                    header: "We use cookies",
-                    message: "This website uses cookies to ensure you get the best experience.",
-                    dismiss: "I agree",
-                }
-            });
-        });
-    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />   
 
 </head>
 
@@ -106,7 +89,7 @@
                         href="{% url 'account_signup' %}">Register</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == login_url %}active"  aria-current="page{% endif %}"
+                        <a class="nav-link {% if request.path == login_url %}active" aria-current="page{% endif %}"
                         href="{% url 'account_login' %}">Login</a>
                     </li>
                     {% endif %}
@@ -158,7 +141,10 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+    <script src="{% static 'js/cookies.js' %}"></script>
     <script src="{% static 'js/comments.js' %}"></script>
+
     {% block extras %}
     {% endblock %}
 </body>
