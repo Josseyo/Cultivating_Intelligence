@@ -122,6 +122,7 @@ The database structure is based on a PostgreSQL model, representing tables, colu
 - **Comment Model**: Manages comments associated with posts.
 - **Category Model**: Organizes posts into categories.
 - **Like Model**: Allows users to express likes for posts.
+- **Contact Model** Serves as a reference point for multiple CollaborateRequest instances.
 
 ### ERD Relationships
 
@@ -129,9 +130,10 @@ The database structure is based on a PostgreSQL model, representing tables, colu
 - **User to Comment**: One-to-Many (A user can have multiple comments; each comment is associated with one user.)
 - **Post to Comment**: One-to-Many (A post can have multiple comments; each comment is associated with one post.)
 - **Category to Post**: One-to-Many (A post belongs to one category; a category can have multiple posts.)
+- **Contact to CollaborateRequest**: One-to-Many (Contact can have multiple CollaborateRequests; each CollaborateRequest is linked to only one contact)
 
 <details><summary>Click to view ERD</summary>
-<img src="docs/images/models/blog_erd.png">
+<img src="docs/images/models/cultivating_intelligence_erd.png">
 </details>
 
 ## Code Structure
