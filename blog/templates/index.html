@@ -20,7 +20,7 @@
                             <div class="image-container">
                                 {% if "placeholder" in post.featured_image.url %}
                                 <img class="card-img-top" src="{% static 'images/default.webp' %}"
-                                    alt="Featured image for {{ post.title }}">
+                                    alt="{{ post.title }}">
                                     {% else %}
                                 <img class="card-img-top" src="{{ post.featured_image.url }}"
                                     alt="Featured image for {{ post.title }}">
