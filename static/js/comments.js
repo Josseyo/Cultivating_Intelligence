@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const commentText = document.getElementById("id_body");
     const commentForm = document.getElementById("commentForm");
     const submitButton = document.getElementById("submitButton");
-    const deleteButtons = document.getElementsByClassName("btn-delete");
     const deleteConfirm = document.getElementById("deleteConfirm");
 
     // Add event listeners for edit buttons
@@ -29,12 +28,12 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    // Add event listeners for delete buttons
-    Array.from(deleteButtons).forEach(button => {
-        button.addEventListener("click", (e) => {
-            const commentId = e.currentTarget.getAttribute("data-comment_id");
+    // Add event listener for delete buttons using event delegation
+    document.addEventListener("click", (e) => {
+        if (e.target.classList.contains("btn-delete")) {
+            const commentId = e.target.getAttribute("data-comment_id");
             deleteConfirm.href = `delete_comment/${commentId}`;
             deleteModal.show();
-        });
+        }
     });
 });
