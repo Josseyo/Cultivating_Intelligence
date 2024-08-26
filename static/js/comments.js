@@ -1,8 +1,11 @@
 document.addEventListener("DOMContentLoaded", function() {
     const deleteModalElement = document.getElementById("deleteModal");
-    console.log(deleteModalElement); // Check if this is null or undefined
+    if (!deleteModalElement) {
+        console.error("Delete modal not found.");
+        return;
+    }
     const deleteModal = new bootstrap.Modal(deleteModalElement);
-
+    
     const editButtons = document.getElementsByClassName("btn-edit");
     const commentText = document.getElementById("id_body");
     const commentForm = document.getElementById("commentForm");
