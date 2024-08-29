@@ -54,7 +54,11 @@
             <div class="card-body">
                 {% for comment in comments %}
                     <div class="p-2 comments">
-                        <p class="font-weight-bold">{{ comment.author.username }} <span class="text-muted">{{ comment.created_on }}</span> wrote:</p>
+                        <p class="font-weight-bold">{{ comment.author.username }} 
+                            <span class="text-muted">
+                                {{ comment.created_on }}{% if comment.updated_on != comment.created_on %} (Edited: {{ comment.updated_on }}){% endif %}
+                            </span> wrote:
+                        </p>
                         <div id="comment{{ comment.id }}">{{ comment.body|linebreaks }}</div>
 
                         {% if user.is_authenticated and comment.author == user %}
@@ -100,10 +104,10 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <a id="deleteConfirm" href="#" class="btn btn-danger">Delete</a>
+                <a id="deleteConfirm" class="btn btn-danger">Delete</a>
             </div>
         </div>
     </div>
 </div>
 
-{% endblock content %}
+{% endblock %}
