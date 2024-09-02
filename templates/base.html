@@ -19,8 +19,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
     <!-- Google Fonts CSS -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+   
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap" rel="stylesheet">
 
     <!-- Font Awesome CSS -->
@@ -44,7 +46,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container-fluid">
             <a class="navbar-brand" href="{% url 'home' %}">
-                <span class="brand"><span class="red-o">dei|ci.</span></span>
+                <span class="brand">dei<span class="gold-div">|</span>ci</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -128,14 +130,17 @@
         {% endblock content %}
     </main>
 
-    <!-- Footer -->
     <footer class="footer mt-auto py-3 dark-bg">
         <p class="m-0 text-center text-white">Made by Cultivating Intelligence</p>
-        <p class="m-0 text-center text-white">Follow us: 
-            <i class="fab fa-facebook-square ms-3"></i>
-            <i class="fab fa-twitter-square ms-3"></i>
-            <i class="fab fa-instagram-square ms-3"></i>
-            <i class="fab fa-youtube-square ms-3"></i>
+        <p class="m-0 text-center text-white">Follow us:            
+            <a href="https://www.instagram.com/coon_louis/" target="_blank" rel="noopener"
+               aria-label="Visit Coon Louis on Instagram (opens in a new tab)" class="icon-link">
+                <i class="fab fa-instagram-square"></i>
+            </a>
+            <a href="https://github.com/Josseyo/Cultivating_Intelligence" target="_blank" rel="noopener"
+               aria-label="Visit Josefin Yoshida on GitHub (opens in a new tab)" class="icon-link">
+                <i class="fa-brands fa-github"></i>
+            </a>
         </p>
     </footer>
 
@@ -149,4 +154,4 @@
     {% endblock %}
 </body>
 
-</html>
+</html

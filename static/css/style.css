@@ -1,17 +1,17 @@
-body {
+/*body {
     background-color: #f8f7ef;
-}
+}*/
 
 .brand {
     font-family: Lato, sans-serif;
     font-size: 1.6rem;
     font-weight: 700;
-    color: #4A4A4F;
+    color: #003f66;
 }
 
-.red-o {
-    color:#233D4D
-    ;
+.gold-div {
+    color:#b1702a;
+    font-weight: bold;
 }
 
 .thin {
@@ -19,11 +19,11 @@ body {
 }
 
 .light-bg {
-    background-color: #fff;
+    background-color:#ffffff;
 }
 
 .dark-bg {
-    background-color:#b0702a;
+    background-color:#003f66;
 }
 
 .main-bg {
@@ -45,7 +45,7 @@ body {
     bottom: 5%;
     min-width: 30%;
     left: -2px;
-    background-color: #2a9eb0
+    background-color: #003f66
 }
 
 .scale {
@@ -53,7 +53,7 @@ body {
     height: auto;
 }
 
-.author {
+.category {
     color: white;
     margin: 4px;
     text-transform: uppercase;
@@ -68,7 +68,7 @@ body {
     width: 100%;
 }
 
-.masthead-text {
+/*.masthead-text {
     background-color: #b0702a;
     color: white;
     position: relative;
@@ -91,27 +91,28 @@ body {
     -moz-transform: skew(15deg);
     transform: skew(15deg);
     z-index: 100;
-}
+} */
 
-.post-link {
+.post-link,
+.page-link {
     text-decoration: none;
-    color: #445261;
+    color: #003f66;
 }
 
 .post-link:hover,
-.page-link {
-    color: #E07A5F;
+.page-link:hover {
+    color: #212529;
 }
 
 .post-title {
-    margin-top: 10%;
+    margin-top: 15%;
     margin-left: 5%;
 }
 
 .post-subtitle {
     margin-left: 5%;
     color: lightgray;
-}
+}*/
 
 .btn-signup,
 .btn-edit {
@@ -121,18 +122,18 @@ body {
 
 .btn-signup:hover,
 .btn-signup:active {
-    background-color: #fff;
-    color: #23BBBB;
+    background-color: white;
+    color: #619B8A;
 }
 
 .link {
-    color: #23BBBB;
+    color: #619B8A;
     text-decoration: none;
 }
 
 .link:hover,
 .link:active {
-    color: #445261;
+    color: #003f66;
     text-decoration: underline;
 }
 
@@ -149,17 +150,25 @@ body {
     border: none;
 }
 
-/* Save for later use */
-
 .btn-delete {
-    color: #fff;
+    color: white;
     background: #de6545ff;
 }
 
+/* Save for later use: 
 .faded {
     color: rgb(172, 175, 175);
 }
 
 .approval {
     color: rgb(222, 146, 168);
+} */
+
+.icon-link {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+.icon-link:hover {
+    color: #b1702a
 }
