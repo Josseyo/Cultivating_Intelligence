@@ -16,7 +16,7 @@
                         <img class="card-img-top" src="{{ post.featured_image.url }}" alt="{{ post.title }}">
                     {% endif %}
                     <div class="image-flash">
-                        <p class="author">{{ post.category.name }}</p>
+                        <p class="category">{{ post.category.name }}</p>
                     </div>
                 </div>
                 <hr>
@@ -49,9 +49,9 @@
 
     <div class="row">
         <div class="col-md-8 card mb-4 mt-3">
-            <h3>Comments:</h3>
-
             <div class="card-body">
+                <h2>Comments:</h2>
+                <p>Logged in users can like posts and write comments</p>
                 {% for comment in comments %}
                     <div class="p-2 comments">
                         <p class="font-weight-bold">{{ comment.author.username }} 
