@@ -11,7 +11,7 @@
 [View Kanban and agile project](https://github.com/users/Josseyo/projects/4)
 
 ## Table of Contents 
-
+- [Introduction](#introduction)
 - [Wireframes](#wireframes)
 - [Features](#features)
 - [UX Design](#ux-design)
@@ -27,6 +27,9 @@
 - [Technologies](#technologies)
 - [Credits](#credits)
 - [Process](#process)
+
+## Introduction
+Welcome to Cultivating Intelligence, a blog focused on Diversity, Equity, and Inclusion (DEI) in the workplace, with a special emphasis on Attention Deficit Hyperactivity Disorder (ADHD). The mission is to raise awareness about the unique challenges faced by individuals with ADHD and advocate for equitable practices that empower all employees. Through insightful articles and personal stories, we aim to provide resources for employers and employees alike. Join us in creating a work culture that values every voice and ensures everyone has the opportunity to thrive.
 
 ## Features
 
@@ -79,9 +82,9 @@
 ### User Stories
 
 <details><summary>As a Site User, I can view a list of posts to select one to read.</summary>
-<img src="docs/images/wireframes/wireframe_contact.png" width:800px>
+<img src="docs/images/userstory/brows_posts.png" width:800px>
 </details>
-
+![alt text](image.png)
 ---
 
 <details><summary>As a Site User, I can click on a post to read its full text.</summary>
@@ -92,13 +95,13 @@
 ---
 
 <details><summary>As a Site User, I can navigate to different category pages to read sorted posts.</summary>
-<img src="docs/images/wireframes/wireframe_contact.png" width:800px>
+<img src="docs/images/userstory/category_posts.png" width:800px>
 </details>
 
 ---
 
 <details><summary>As a Site User, I can view the number of likes to identify popular posts.</summary>
-<img src="docs/images/wireframes/wireframe_contact.png" width:800px>
+<img src="docs/images/userstory/like.png" width:800px>
 </details>
 
 ---
@@ -170,6 +173,7 @@ A rich, warm gold that evokes feelings of positivity and warmth.
 </details>
 
 ### Fonts
+Lato is a sans-serif typeface and is used for the brand logo. It is suitable for individuals with ADHD. The clean letterforms enhance readability, reducing visual clutter and helping users focus on the text. 
 
 <details><summary>Primary Font</summary>
   - Lato, sans-serif
@@ -184,6 +188,16 @@ A rich, warm gold that evokes feelings of positivity and warmth.
 ## Database
 I have used [CI Database](https://dbs.ci-dbs.net/) for the project.
 
+## Storage
+[Cloudinary](https://cloudinary.com/) is used for managing images in the cloud. 
+
+### Fonts
+- Font Awesome: [Font Awesome](http://fontawesome.io/)
+
+### Imagery
+- Post images from: [Stock Cake](https://stockcake.com)
+- Default blog post image from [Unsplash](https://unsplash.com...)
+
 ### Entity-Relationship Diagram (ERD)  
 The database structure is based on a PostgreSQL model, representing tables, columns, relationships, and constraints.
 
@@ -192,6 +206,7 @@ The database structure is based on a PostgreSQL model, representing tables, colu
 - **Comment Model**: Manages comments associated with posts.
 - **Category Model**: Organizes posts into categories.
 - **Contact Model** Serves as a reference point for multiple CollaborateRequest instances.
+- **CollaborateRequest** Ensures that all requests are tracked effectively.
 
 ### ERD Relationships
 
@@ -201,8 +216,10 @@ The database structure is based on a PostgreSQL model, representing tables, colu
 - **Category to Post**: One-to-Many (A post belongs to one category; a category can have multiple posts.)
 - **Contact to CollaborateRequest**: One-to-Many (Contact can have multiple CollaborateRequests; each CollaborateRequest is linked to only one contact)
 
+![ERD](https://docs.google.com/presentation/d/1CF1Q54uuGRmJGlnQ6oZJiOQuT8qSisuKo4ukPUVWv6w/edit?usp=sharing)
+
 <details><summary>Click to view ERD</summary>
-<img src="docs/images/models/cultivating_intelligence_erd.png" width="800">
+<img src="docs/images/models/cultivating_intelligence_erd_v2.png" width="800">
 </details>
 
 ## Code Structure
@@ -650,12 +667,62 @@ Before deploying to Heroku, ensure you have the following variables prepared:
 ---
 
 ## Issues/Improvements
-
 - Consistency in typography, including text and heading levels.
 
-## Technologies
 
-- CI Database: https://dbs.ci-dbs.net/
+## Technologies
+The following technologies were utilized in this project:
+
+### Backend
+- **Python**: The primary language for backend development.
+- **Django**: A Python web framework for rapid development and clean design. [Django Documentation](https://docs.djangoproject.com/)
+- **Django Allauth**: Manages authentication, registration, and account management. [Django Allauth Documentation](https://django-allauth.readthedocs.io/)
+
+### Frontend
+- **HTML**: The standard markup language for creating web pages.
+- **CSS**: Styles web page layout and design.
+- **JavaScript**: Adds interactivity to web pages.
+- **Bootstrap**: A front-end framework for responsive, mobile-first web development. Using [Bootstrap 5.3](https://getbootstrap.com/docs/5.3/getting-started/introduction/).
+- **Font Awesome**: A toolkit for icons and fonts. [Font Awesome](https://fontawesome.com/)
+- **Google Fonts**: A library of web fonts. [Google Fonts](https://fonts.google.com/)
+
+### Database
+- **PostgreSQL**: An open-source relational database system. [PostgreSQL](https://www.postgresql.org/)
+
+### Storage
+- **Cloudinary**: Manages images and videos in the cloud. [Cloudinary](https://cloudinary.com/)
+
+### Other Tools and Libraries
+- **Git**: Version control system to track changes in source code. [Git Documentation](https://git-scm.com/doc)
+- **GitHub**: Platform for version control and collaborative development. [GitHub](https://github.com/)
+- **Whitenoise**: Serves static files for Python web apps. [Whitenoise Documentation](http://whitenoise.evans.io/en/stable/)
+
+## Packages
+The packages installed for this project can be found in requirements.txt and can be seen below.
+
+- [asgiref==3.8.1](https://pypi.org/project/asgiref/)
+- [cloudinary==1.40.0](https://pypi.org/project/cloudinary/)
+- [crispy-bootstrap5==2024.2](https://pypi.org/project/crispy-bootstrap5/)
+- [dj-database-url==0.5.0](https://pypi.org/project/dj-database-url/)
+- [dj3-cloudinary-storage==0.0.6](https://pypi.org/project/dj3-cloudinary-storage/)
+- [Django==5.0.7](https://pypi.org/project/Django/)
+- [django-allauth==0.57.2](https://pypi.org/project/django-allauth/)
+- [django-crispy-forms==2.3](https://pypi.org/project/django-crispy-forms/)
+- [django-summernote==0.8.20.0](https://pypi.org/project/django-summernote/)
+- [gunicorn==22.0.0](https://pypi.org/project/gunicorn/)
+- [oauthlib==3.2.2](https://pypi.org/project/oauthlib/)
+- [psycopg2==2.9.9](https://pypi.org/project/psycopg2/)
+- [PyJWT==2.8.0](https://pypi.org/project/PyJWT/)
+- [python3-openid==3.2.0](https://pypi.org/project/python3-openid/3.2.0/)
+- [pytz==2024.1](https://pypi.org/project/pytz/2024.1/)
+- [requests-oauthlib==2.0.0](https://pypi.org/project/requests-oauthlib/)
+- [sqlparse==0.5.0](https://pypi.org/project/sqlparse/)
+- [urllib3==1.26.15](https://pypi.org/project/urllib3/)
+- [whitenoise==6.7.0](https://pypi.org/project/whitenoise/)
+
+## Dependencies
+
+For full details on project dependencies, please refer to the `requirements.txt` file in the project repository.
 
 ## Credits
 
@@ -666,12 +733,6 @@ Before deploying to Heroku, ensure you have the following variables prepared:
 - How to create a custom 404 error page: [makeuseof.com] https://www.makeuseof.com/create-custom-404-error-page-django/
 - Trouble shooting support: [Linus Johansson](https://github.com/j0hanz)
 
-### Fonts
-- Font Awesome: [Font Awesome](http://fontawesome.io/)
-
-### Imagery
-- Post images from: [Stock Cake](https://stockcake.com)
-- Default blog post image from [Unsplash](https://unsplash.com...)
 
 ## Process
 
