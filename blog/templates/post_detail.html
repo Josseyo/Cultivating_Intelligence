@@ -10,10 +10,10 @@
             <div class="card-body">
                 <h1>{{ post.title }}</h1>
                 <div class="image-container">
-                    {% if post.featured_image and "placeholder" in post.featured_image.url %}                    
-                        <img src="{% static 'images/default_image.webp' %}" class="scale" alt="{{ post.title }}">
-                    {% elif post.featured_image %}
-                        <img class="card-img-top" src="{{ post.featured_image.url }}" alt="{{ post.title }}">
+                    {% if "placeholder" in post.featured_image.url %}                    
+                        <img src="{% static 'images/default_image.webp' %}" class="scale" alt="Image for {{ post.title }}">
+                    {% else %}
+                        <img class="card-img-top" src="{{ post.featured_image.url }}" class="scale" alt="Image for {{ post.title }}">
                     {% endif %}
                     <div class="image-flash">
                         <p class="category">{{ post.category.name }}</p>
