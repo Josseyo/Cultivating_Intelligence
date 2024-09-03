@@ -10,10 +10,10 @@
             <div class="card-body">
                 <h1>{{ post.title }}</h1>
                 <div class="image-container">
-                    {% if "placeholder" in post.featured_image.url %}                    
-                        <img src="{% static 'images/default_image.webp' %}" class="scale" alt="Image for {{ post.title }}">
+                    {% if "placeholder" in post.featured_image.url %}
+                        <img src="{% static 'images/default_image.webp' %}" class="card-img-top scale" alt="Image for {{ post.title }}">
                     {% else %}
-                        <img class="card-img-top" src="{{ post.featured_image.url }}" class="scale" alt="Image for {{ post.title }}">
+                        <img src="{{ post.featured_image.url }}" class="card-img-top scale" alt="Image for {{ post.title }}">
                     {% endif %}
                     <div class="image-flash">
                         <p class="category">{{ post.category.name }}</p>
@@ -69,6 +69,8 @@
                             <button class="btn btn-delete" data-comment_id="{{ comment.id }}">Delete</button>
                         {% endif %}
                     </div>
+                {% empty %}
+                    <p>No comments yet. Be the first to comment!</p>
                 {% endfor %}
             </div>
         </div> 
