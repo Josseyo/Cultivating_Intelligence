@@ -10,18 +10,14 @@
 
 <div class="container mt-3">
     <div class="row justify-content-center">
-        <div class="col-12 col-md-4 my-5">
-            <div class="card-body">
-                <h3>Edit Comment</h3>
-                <form method="POST" action="{% url 'comment_edit' post.slug comment.id %}">
-                    {% csrf_token %}
-                    {{ comment_form|crispy }}
-                    <div class="d-flex justify-content-between mt-3">
-                        <button class="btn btn-success" type="submit">Update Comment</button>
-                        <a href="{% url 'post_detail' post.slug %}" class="btn btn-secondary">Cancel</a>
-                    </div>
-                </form>   
-            </div>
+        <div class="col-12 col-md-6 my-5">
+            <h1>Edit Comment</h1>
+            <form method="POST" action="{% url 'comment_edit' post.slug comment.id %}">
+                {% csrf_token %}
+                {{ comment_form|crispy }}
+                <button class="btn btn-success" type="submit">Update Comment</button>
+                <a href="{% url 'post_detail' post.slug %}" class="btn btn-secondary">Cancel</a>
+            </form>   
         </div>
     </div>
 </div>
