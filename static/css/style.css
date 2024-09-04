@@ -1,6 +1,6 @@
-/*body {
+body {
     background-color: #f8f7ef;
-}*/
+}
 
 .brand {
     font-family: Lato, sans-serif;
@@ -66,6 +66,12 @@
     display: inline-block;
     height: 33vh;
     width: 100%;
+}
+
+.card-body {
+    font-family: Roboto, sans-serif;
+    
+    color: #212529; 
 }
 
 /*.masthead-text {
@@ -155,6 +161,7 @@
     background: #de6545ff;
 }
 
+
 /* Save for later use: 
 .faded {
     color: rgb(172, 175, 175);
@@ -171,4 +178,53 @@
 }
 .icon-link:hover {
     color: #b1702a
+}
+
+/* Media Query for Mobile Phones */
+@media (max-width: 600px) {
+    .brand {
+        font-size: 1.4rem; /* Adjust font size for mobile */
+    }
+
+    .masthead {
+        height: 25vh; /* Adjust masthead height for mobile */
+    }
+
+    .post-title {
+        margin-top: 10%; /* Adjust margin for mobile */
+        margin-left: 2%; /* Adjust margin for mobile */
+    }
+
+    .post-subtitle {
+        margin-left: 2%; /* Adjust margin for mobile */
+    }
+
+    .image-flash {
+        min-width: 50%; /* Adjust image flash size for mobile */
+    }
+}
+
+/* Media Query for Desktop and Laptop */
+@media (min-width: 1024px) {
+    .brand {
+        font-size: 2rem; /* Increase font size for larger screens */
+    }
+
+    .masthead {
+        height: 40vh; /* Increase masthead height for larger screens */
+    }
+
+    .post-title {
+        margin-top: 20%; /* Adjust margin for larger screens */
+        margin-left: 10%; /* Adjust margin for larger screens */
+    }
+
+    .post-subtitle {
+        margin-left: 10%; /* Adjust margin for larger screens */
+    }
+
+
+    .image-flash {
+        min-width: 25%; /* Adjust image flash size for larger screens */
+    }
 }
