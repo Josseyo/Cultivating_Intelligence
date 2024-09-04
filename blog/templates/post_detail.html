@@ -64,7 +64,7 @@
                         {% if user.is_authenticated and comment.author == user %}
                             <form action="{% url 'comment_edit' post.slug comment.id %}" method="POST" style="display:inline;">
                                 {% csrf_token %}
-                                <button type="submit" class="btn btn-edit">Edit</button>
+                                <button type="submit" class="btn btn-success">Edit</button>
                             </form>
                             <button class="btn btn-delete" data-comment_id="{{ comment.id }}">Delete</button>
                         {% endif %}
@@ -83,7 +83,7 @@
                     <form method="post">
                         {% csrf_token %}
                         {{ comment_form|crispy }}
-                        <button type="submit" class="btn btn-signup btn-lg">Submit</button>
+                        <button type="submit" class="btn btn-success">Submit</button>
                     </form>
                 {% else %}
                     <p>Log in to like and to leave a comment</p>
@@ -112,4 +112,8 @@
     </div>
 </div>
 
+{% endblock %}
+
+{% block extras %}
+<script src="{% static 'js/comments.js' %}"></script>
 {% endblock %}
