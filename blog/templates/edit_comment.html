@@ -2,30 +2,32 @@
 {% load static %}
 {% load crispy_forms_tags %}
 
-{% block title %}Edit comment{% endblock %}
+{% block title %}Edit Comment{% endblock %}
 
 {% block content %}
 
 <!-- edit_comment.html content starts here -->
 
-<div class="container-fluid">
-
-    <div class="row">
-        <!-- Category title -->
-        <div class="col-md-4 card mb-4 mt-3">
+<div class="container mt-3">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-4 my-5">
             <div class="card-body">
                 <h3>Edit Comment</h3>
                 <form method="POST" action="{% url 'comment_edit' post.slug comment.id %}">
                     {% csrf_token %}
                     {{ comment_form|crispy }}
                     <div class="d-flex justify-content-between mt-3">
-                        <button type="submit" class="btn btn-edit">Update Comment</button>
+                        <button class="btn btn-success" type="submit">Update Comment</button>
                         <a href="{% url 'post_detail' post.slug %}" class="btn btn-secondary">Cancel</a>
                     </div>
-                </form>
+                </form>   
             </div>
         </div>
     </div>
 </div>
 
+{% endblock %}
+
+{% block extras %}
+<script src="{% static 'js/comments.js' %}"></script>
 {% endblock %}
