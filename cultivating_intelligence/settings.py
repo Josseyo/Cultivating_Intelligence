@@ -18,7 +18,7 @@ import dj_database_url
 if os.path.isfile("env.py"):
     import env
 
-SUMMERNOTE_THEME = "bs5"
+SUMMERNOTE_THEME = "bs4"
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -31,7 +31,6 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, "templates")
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = os.environ.get('DEBUG', False)
 DEBUG = False
 
 ALLOWED_HOSTS = [
@@ -41,8 +40,8 @@ ALLOWED_HOSTS = [
 ]
 
 CSRF_TRUSTED_ORIGINS = [
- "https://8000-josseyo-cultivatinginte-g2rcff6illk.ws.codeinstitute-ide.net",
- "http://8000-josseyo-cultivatinginte-g2rcff6illk.ws.codeinstitute-ide.net",
+    "https://8000-josseyo-cultivatinginte-g2rcff6illk.ws.codeinstitute-ide.net",
+    "http://8000-josseyo-cultivatinginte-g2rcff6illk.ws.codeinstitute-ide.net",
 ]
 
 # Application definition
@@ -54,6 +53,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "cloudinary_storage",
+    "cloudinary",
     "django.contrib.sites",
     "allauth",
     "allauth.account",
@@ -61,7 +61,6 @@ INSTALLED_APPS = [
     "crispy_forms",
     "crispy_bootstrap5",
     "django_summernote",
-    "cloudinary",
     "blog",
     "contact",
 ]
@@ -81,9 +80,6 @@ MESSAGE_TAGS = {
     messages.WARNING: "alert-warning",
     messages.ERROR: "alert-danger",
 }
-
-CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
-CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
