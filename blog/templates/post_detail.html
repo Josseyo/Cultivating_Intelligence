@@ -51,7 +51,6 @@
         <div class="col-md-8 card mb-4 mt-3">
             <div class="card-body">
                 <h2>Comments:</h2>
-                <p>Logged in users can like posts and write comments</p>
                 {% for comment in comments %}
                     <div class="p-2 comments">
                         <p class="font-weight-bold">{{ comment.author.username }} 
@@ -86,8 +85,7 @@
                         <button type="submit" class="btn btn-success">Submit</button>
                     </form>
                 {% else %}
-                    <p>Log in to like and to leave a comment</p>
-                {% endif %}
+                <p><strong><a href="https://cultivating-intelligence-1ead7384db49.herokuapp.com/accounts/login/">Log in to like and to leave a comment</a></strong></p>                {% endif %}
             </div>
         </div>
     </div>
