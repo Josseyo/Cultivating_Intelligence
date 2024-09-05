@@ -1,6 +1,6 @@
-body {
+/*body {
     background-color: #f8f7ef;
-}
+}*/
 
 .brand {
     font-family: Lato, sans-serif;
@@ -74,31 +74,6 @@ body {
     color: #212529; 
 }
 
-/*.masthead-text {
-    background-color: #b0702a;
-    color: white;
-    position: relative;
-}
-
-.masthead-image {
-    position: relative;
-    overflow: hidden;
-}
-
-.masthead-image:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 90%;
-    height: 100%;
-    width: 150%;
-    background: #445261;
-    -webkit-transform: skew(15deg);
-    -moz-transform: skew(15deg);
-    transform: skew(15deg);
-    z-index: 100;
-} */
-
 .post-link,
 .page-link {
     text-decoration: none;
@@ -118,18 +93,6 @@ body {
 .post-subtitle {
     margin-left: 5%;
     color: lightgray;
-}*/
-
-.btn-signup,
-.btn-edit {
-    background-color: #619B8A;
-    color: #fff;
-}
-
-.btn-signup:hover,
-.btn-signup:active {
-    background-color: white;
-    color: #619B8A;
 }
 
 .link {
@@ -161,24 +124,16 @@ body {
     background: #de6545ff;
 }
 
-
-/* Save for later use: 
-.faded {
-    color: rgb(172, 175, 175);
-}
-
-.approval {
-    color: rgb(222, 146, 168);
-} */
-
 .icon-link {
     color: white;
     margin: 0 10px;
     text-decoration: none;
 }
-.icon-link:hover {
-    color: #b1702a
+
+.icon-link:hover i {
+    color: lightgray;
 }
+
 
 /* Media Query for Mobile Phones */
 @media (max-width: 600px) {
