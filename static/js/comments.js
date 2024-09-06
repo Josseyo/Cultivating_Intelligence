@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
     }
     
-    const deleteModal = new bootstrap.Modal(document.getElementById("deleteModa"));
+    const deleteModal = new bootstrap.Modal(document.getElementById("deleteModal"));
   
     const editButtons = document.getElementsByClassName("btn-edit");
     const commentText = document.getElementById("id_body");
