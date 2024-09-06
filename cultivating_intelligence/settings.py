@@ -40,9 +40,10 @@ ALLOWED_HOSTS = [
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://8000-josseyo-cultivatinginte-g2rcff6illk.ws.codeinstitute-ide.net",
-    "http://8000-josseyo-cultivatinginte-g2rcff6illk.ws.codeinstitute-ide.net",
+ "https://8000-josseyo-cultivatinginte-g2rcff6illk.ws.codeinstitute-ide.net",
+ "http://8000-josseyo-cultivatinginte-g2rcff6illk.ws.codeinstitute-ide.net",
 ]
+
 
 # Application definition
 INSTALLED_APPS = [
@@ -118,7 +119,9 @@ WSGI_APPLICATION = "cultivating_intelligence.wsgi.application"
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-    "default": dj_database_url.config(default=os.environ.get("DATABASE_URL"))
+    "default": dj_database_url.config(
+        default=os.environ.get("DATABASE_URL")
+    )
 }
 
 # Password validation
@@ -126,16 +129,20 @@ DATABASES = {
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
+        "NAME": "django.contrib.auth.password_validation."
+                "UserAttributeSimilarityValidator",
     },
     {
-        "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
+        "NAME": "django.contrib.auth.password_validation."
+                "MinimumLengthValidator",
     },
     {
-        "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",
+        "NAME": "django.contrib.auth.password_validation."
+                "CommonPasswordValidator",
     },
     {
-        "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
+        "NAME": "django.contrib.auth.password_validation."
+                "NumericPasswordValidator",
     },
 ]
 
