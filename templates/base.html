@@ -6,7 +6,6 @@
 {% url 'account_signup' as signup_url %}
 {% url 'account_logout' as logout_url %}
 
-
 <!DOCTYPE html>
 <html class="h-100" lang="en">
 
@@ -16,13 +15,11 @@
     <meta name="description" content="Cultivating Intelligence through diversity, equity and inclusion">
     <meta name="keywords" content="ADHD, diversity, equity, inclusion">
     <meta name="author" content="Cultivating Intelligence">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        
-    <!-- Google Fonts CSS -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- Google Fonts CSS -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-   
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap" rel="stylesheet">
 
     <!-- Font Awesome CSS -->
@@ -35,9 +32,8 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
-    <!-- Cookies -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />   
-
+    <!-- Cookies Consent CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css">
 </head>
 
 <body class="d-flex flex-column h-100 main-bg">
@@ -64,36 +60,33 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             {% for category in category_list %}
-
-                            {% if category.name != 'Default' %}  <!-- Check to hide default category -->
-                            <a class="dropdown-item" href="/category/{{ category.name|urlencode }}">
-                                {{ category.name }}
-                            </a>
-                            {% endif %}
-
+                                {% if category.name != 'Default' %}  <!-- Check to hide default category -->
+                                    <a class="dropdown-item" href="/category/{{ category.name|urlencode }}">
+                                        {{ category.name }}
+                                    </a>
+                                {% endif %}
                             {% endfor %}
-
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == contact_url %}active" aria-current="page{% endif %}"
+                        <a class="nav-link {% if request.path == contact_url %}active{% endif %}" aria-current="page"
                             href="{% url 'contact' %}">Contact</a>
                     </li>
 
                     {% if user.is_authenticated %}
-                    <li class="nav-item">
-                        <a class="nav-link {% if request.path == logout_url %}active" aria-current="page{% endif %}"
-                        href="{% url 'account_logout' %}">Logout</a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == logout_url %}active{% endif %}"
+                            href="{% url 'account_logout' %}">Logout</a>
+                        </li>
                     {% else %}
-                    <li class="nav-item">
-                        <a class="nav-link {% if request.path == signup_url %}active" aria-current="page{% endif %}"
-                        href="{% url 'account_signup' %}">Register</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {% if request.path == login_url %}active" aria-current="page{% endif %}"
-                        href="{% url 'account_login' %}">Login</a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == signup_url %}active{% endif %}"
+                            href="{% url 'account_signup' %}">Register</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == login_url %}active{% endif %}"
+                            href="{% url 'account_login' %}">Login</a>
+                        </li>
                     {% endif %}
                 </ul>
                 <span class="navbar-text text-muted">
@@ -107,9 +100,7 @@
         <div class="row">
             <div class="col-md-8 offset-md-2">
                 {% for message in messages %}
-                
                 <div class="alert {{ message.tags }} alert-dismissible fade show" role="alert">
-               <!--<div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">-->
                     {{ message | safe }}
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
@@ -137,21 +128,20 @@
                aria-label="Visit Coon Louis on Instagram (opens in a new tab)" class="icon-link">
                 <i class="fab fa-instagram-square"></i>
             </a>
-
             <a href="https://github.com/Josseyo/Cultivating_Intelligence" target="_blank" rel="noopener"
                 aria-label="Visit Josefin Yoshida on GitHub (opens in a new tab)" class="icon-link" style="color: white;">
                 <i class="fab fa-github"></i>
             </a>
-
             <a href="https://www.linkedin.com/in/josefiny/" target="_blank" rel="noopener"
                 aria-label="Visit Josefin Yoshida on LinkedIn (opens in a new tab)" class="icon-link" style="color: white;">
                 <i class="fab fa-linkedin"></i>
-</a>
+            </a>
         </p>
     </footer>
 
+    <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
     <script src="{% static 'js/cookies.js' %}"></script>
     
@@ -159,4 +149,4 @@
     {% endblock %}
 </body>
 
-</html
+</html>
