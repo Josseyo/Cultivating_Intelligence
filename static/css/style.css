@@ -1,7 +1,3 @@
-/*body {
-    background-color: #f8f7ef;
-}*/
-
 .brand {
     font-family: Lato, sans-serif;
     font-size: 1.6rem;
@@ -10,7 +6,7 @@
 }
 
 .gold-div {
-    color:#b1702a;
+    color: #b1702a;
     font-weight: bold;
 }
 
@@ -19,16 +15,15 @@
 }
 
 .light-bg {
-    background-color:#ffffff;
+    background-color: #ffffff;
 }
 
 .dark-bg {
-    background-color:#003f66;
+    background-color: #003f66;
 }
 
 .main-bg {
-    background-color: #fffce9
-    ;
+    background-color: #fffce9;
 }
 
 .card {
@@ -45,7 +40,7 @@
     bottom: 5%;
     min-width: 30%;
     left: -2px;
-    background-color: #003f66
+    background-color: #003f66;
 }
 
 .scale {
@@ -70,8 +65,7 @@
 
 .card-body {
     font-family: Roboto, sans-serif;
-    
-    color: #212529; 
+    color: #212529;
 }
 
 .post-link,
@@ -110,6 +104,7 @@
     color: #E84610;
     border: none;
     background: transparent;
+    cursor: pointer;
 }
 
 .btn-like:hover,
@@ -134,52 +129,50 @@
     color: lightgray;
 }
 
-
 /* Media Query for Mobile Phones */
 @media (max-width: 600px) {
     .brand {
-        font-size: 1.4rem; /* Adjust font size for mobile */
+        font-size: 1.4rem;
     }
 
     .masthead {
-        height: 25vh; /* Adjust masthead height for mobile */
+        height: 25vh;
     }
 
     .post-title {
-        margin-top: 10%; /* Adjust margin for mobile */
-        margin-left: 2%; /* Adjust margin for mobile */
+        margin-top: 10%;
+        margin-left: 2%;
     }
 
     .post-subtitle {
-        margin-left: 2%; /* Adjust margin for mobile */
+        margin-left: 2%;
     }
 
     .image-flash {
-        min-width: 50%; /* Adjust image flash size for mobile */
+        min-width: 50%;
     }
 }
 
 /* Media Query for Desktop and Laptop */
 @media (min-width: 1024px) {
     .brand {
-        font-size: 2rem; /* Increase font size for larger screens */
+        font-size: 2rem;
     }
 
     .masthead {
-        height: 40vh; /* Increase masthead height for larger screens */
+        height: 40vh;
     }
 
     .post-title {
-        margin-top: 20%; /* Adjust margin for larger screens */
-        margin-left: 10%; /* Adjust margin for larger screens */
+        margin-top: 20%;
+        margin-left: 10%;
     }
 
     .post-subtitle {
-        margin-left: 10%; /* Adjust margin for larger screens */
+        margin-left: 10%;
     }
 
-
     .image-flash {
-        min-width: 25%; /* Adjust image flash size for larger screens */
+        min-width: 25%;
     }
 }
