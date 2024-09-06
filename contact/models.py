@@ -6,25 +6,42 @@ from cloudinary.models import CloudinaryField
 
 class Contact(models.Model):
     """
-    Stores a text about when and why to get in contact
+    Model to store information about when and why to get in contact.
+
+    Attributes:
+        title (str): The title of the contact information.
+        profile_image (CloudinaryField): An image associated with the contact.
+        updated_on (datetime): The timestamp for when the contact information
+        was last updated.
+        content (str): Detailed content explaining the contact information.
     """
+
     title = models.CharField(max_length=200)
-    profile_image = CloudinaryField('image', default='placeholder')
+    profile_image = CloudinaryField("image", default="placeholder")
     updated_on = models.DateTimeField(auto_now=True)
     content = models.TextField()
 
     def __str__(self):
+        """Return the title of the contact information."""
         return self.title
 
 
 class CollaborateRequest(models.Model):
     """
-    Store contact details and request message
+    Model to store contact details and request message for collaboration.
+
+    Attributes:
+        name (str): The name of the person making the request.
+        email (str): The email address of the person making the request.
+        message (str): The message detailing the collaboration request.
+        read (bool): A flag indicating whether the request has been read.
     """
+
     name = models.CharField(max_length=200)
     email = models.EmailField()
     message = models.TextField()
     read = models.BooleanField(default=False)
 
     def __str__(self):
+        """Return a string representation of the collaboration request."""
         return f"Collaboration request from {self.name}"

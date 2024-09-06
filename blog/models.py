@@ -66,7 +66,7 @@ class Post(models.Model):
 
         Attributes:
             ordering (list): Specifies the default ordering of posts
-        by creation date in descending order.
+            by creation date in descending order.
         """
 
         ordering = ["-created_on"]

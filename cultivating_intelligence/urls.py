@@ -21,6 +21,6 @@ urlpatterns = [
     path('summernote/', include('django_summernote.urls')),
     path('', include('blog.urls')),
     path('accounts/', include('allauth.urls')),
-    path('contact/', include('contact.urls'), name='contact-urls'), 
+    path('contact/', include('contact.urls'), name='contact-urls'),
 ]
 handler404 = 'blog.views.custom_404'

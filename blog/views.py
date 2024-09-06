@@ -6,35 +6,33 @@ from .models import Post, Comment, Category
 from .forms import CommentForm
 from django.views import generic, View
 
-# Create your views here.
 
-
-# custom 404 view
+# Custom 404 view
 def custom_404(request, exception):
+    """Render the custom 404 error page."""
     return render(request, "404.html", status=404)
 
 
 class PostList(generic.ListView):
+    """View to list all published posts."""
+
     queryset = Post.objects.filter(status=1).order_by("-created_on")
     template_name = "index.html"
     paginate_by = 6
 
 
 class PostDetail(View):
-    """
-    PostDetail(View):
-    """
+    """View to display a specific post and its comments."""
 
     def get(self, request, slug, *args, **kwargs):
+        """Handle GET request to display post details and comments."""
         post = get_object_or_404(Post.objects.filter(status=1), slug=slug)
         comments = post.comments.filter(approved=True).order_by("-created_on")
         comment_count = comments.count()
-
         liked = (
             request.user.is_authenticated
             and post.likes.filter(id=request.user.id).exists()
         )
-
         comment_form = CommentForm()
         template_name = "post_detail.html"
 
@@ -51,6 +49,7 @@ class PostDetail(View):
         )
 
     def post(self, request, slug, *args, **kwargs):
+        """Handle POST request to add a comment to the post."""
         post = get_object_or_404(Post.objects.filter(status=1), slug=slug)
         comments = post.comments.filter(approved=True).order_by("-created_on")
         liked = (
@@ -67,10 +66,7 @@ class PostDetail(View):
             comment.author = request.user
             comment.save()
             messages.success(request, "Your comment has been added.")
-
-            return HttpResponseRedirect(
-                reverse("post_detail", args=[slug])
-            )  # Redirect after saving
+            return HttpResponseRedirect(reverse("post_detail", args=[slug]))
 
         else:
             messages.error(request, "There was an error with your comment.")
@@ -90,7 +86,10 @@ class PostDetail(View):
 
 
 class PostLike(View):
+    """View to handle liking and unliking a post."""
+
     def post(self, request, slug, *args, **kwargs):
+        """Toggle the like status of a post."""
         post = get_object_or_404(Post, slug=slug)
 
         if post.likes.filter(id=request.user.id).exists():
@@ -102,10 +101,13 @@ class PostLike(View):
 
 
 class CatListView(generic.ListView):
+    """View to list posts by category."""
+
     template_name = "category.html"
     context_object_name = "catlist"
 
     def get_queryset(self):
+        """Return posts belonging to the specified category."""
         content = {
             "cat": self.kwargs["category"],
             "posts": Post.objects.filter(
@@ -116,6 +118,7 @@ class CatListView(generic.ListView):
 
 
 def category_list(request):
+    """Return a list of categories excluding the default category."""
     category_list = Category.objects.exclude(name="default")
     context = {
         "category_list": category_list,
@@ -124,6 +127,7 @@ def category_list(request):
 
 
 def comment_edit(request, slug, comment_id):
+    """Edit an existing comment on a post."""
     post = get_object_or_404(Post.objects.filter(status=1), slug=slug)
     comment = get_object_or_404(Comment, id=comment_id)
 
@@ -140,13 +144,11 @@ def comment_edit(request, slug, comment_id):
             messages.success(request, "Comment Updated!")
             return HttpResponseRedirect(reverse("post_detail", args=[slug]))
         else:
-            # If not POST, create a form instance with existing comment data
             comment_form = CommentForm(instance=comment)
 
     else:
         messages.error(request, "Error updating comment!")
 
-    # Render the comment edit form
     return render(
         request,
         "edit_comment.html",
@@ -159,7 +161,7 @@ def comment_edit(request, slug, comment_id):
 
 
 def comment_delete(request, slug, comment_id):
-    post = get_object_or_404(Post.objects.filter(status=1), slug=slug)
+    """Delete a specific comment from a post."""
     comment = get_object_or_404(Comment, pk=comment_id)
 
     if comment.author == request.user:
