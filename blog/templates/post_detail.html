@@ -3,7 +3,7 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-
+<!-- Main content block for displaying a blog post -->
 <div class="container">
     <div class="row">
         <div class="col card mb-4 mt-3 left top">
@@ -23,23 +23,22 @@
                 <p class="card-text text-muted h6">{{ post.created_on }} | Author: {{ post.author.username }}</p>
                 <p class="card-text">{{ post.excerpt }}</p>
                 <p class="card-text">{{ post.content|safe }}</p>
-                <div class="row">
-                    <div class="col-1">
-                        <strong>
-                            {% if user.is_authenticated %}
-                                <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
-                                    {% csrf_token %}
-                                    <button type="submit" class="btn-like">
-                                        <i class="{% if liked %}fas fa-heart{% else %}far fa-heart{% endif %}"></i>
-                                    </button>
-                                </form>
-                            {% else %}
-                                <span class="text-secondary"><i class="far fa-heart"></i></span>
-                            {% endif %}
-                            <span class="text-secondary">{{ post.number_of_likes }}</span>
-                        </strong>
+
+                <div class="row align-items-center">
+                    <div class="col-auto">
+                        {% if user.is_authenticated %}
+                            <form action="{% url 'post_like' post.slug %}" method="POST" class="d-inline">
+                                {% csrf_token %}
+                                <button type="submit" class="btn-like">
+                                    <i class="{% if liked %}fas fa-heart{% else %}far fa-heart{% endif %}"></i>
+                                </button>
+                            </form>
+                        {% else %}
+                            <span class="text-secondary"><i class="far fa-heart"></i></span>
+                        {% endif %}
+                        <span class="text-secondary">{{ post.number_of_likes }}</span>
                     </div>
-                    <div class="col-1">
+                    <div class="col-auto">
                         <strong class="text-secondary"><i class="far fa-comments"></i> {{ comment_count }}</strong>
                     </div>
                 </div>
@@ -85,7 +84,8 @@
                         <button type="submit" class="btn btn-success">Submit</button>
                     </form>
                 {% else %}
-                <p><strong><a href="https://cultivating-intelligence-1ead7384db49.herokuapp.com/accounts/login/">Log in to like and to leave a comment</a></strong></p>                {% endif %}
+                    <p><strong><a href="https://cultivating-intelligence-1ead7384db49.herokuapp.com/accounts/login/">Log in to like and to leave a comment</a></strong></p>
+                {% endif %}
             </div>
         </div>
     </div>
@@ -113,5 +113,6 @@
 {% endblock %}
 
 {% block extras %}
+<!-- Include JavaScript for comment functionality -->
 <script src="{% static 'js/comments.js' %}"></script>
 {% endblock %}
