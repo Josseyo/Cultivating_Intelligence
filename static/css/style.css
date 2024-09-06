@@ -89,15 +89,8 @@
     color: lightgray;
 }
 
-.link {
-    color: #619B8A;
-    text-decoration: none;
-}
-
-.link:hover,
-.link:active {
+.link-color {
     color: #003f66;
-    text-decoration: underline;
 }
 
 .btn-like {
