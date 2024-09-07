@@ -58,7 +58,6 @@
                             </span> wrote:
                         </p>
                         <div id="comment{{ comment.id }}">{{ comment.body|linebreaks }}</div>
-
                         {% if user.is_authenticated and comment.author == user %}
                             <form action="{% url 'comment_edit' post.slug comment.id %}" method="POST" style="display:inline;">
                                 {% csrf_token %}
@@ -72,7 +71,6 @@
                 {% endfor %}
             </div>
         </div> 
-
         <div class="col-md-4 card mb-4 mt-3">
             <div class="card-body">
                 {% if user.is_authenticated %}
@@ -84,7 +82,7 @@
                         <button type="submit" class="btn btn-success">Submit</button>
                     </form>
                 {% else %}
-                <h3><strong><a class="link-color" href="https://cultivating-intelligence-1ead7384db49.herokuapp.com/accounts/login/">Login to like and to leave a comment</a></strong></h3>
+                    <h3><strong><a class="link-color" href="https://cultivating-intelligence-1ead7384db49.herokuapp.com/accounts/login/">Login to like and to leave a comment</a></strong></h3>
                 {% endif %}
             </div>
         </div>
