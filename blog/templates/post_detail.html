@@ -11,9 +11,9 @@
                 <h1>{{ post.title }}</h1>
                 <div class="image-container">
                     {% if "placeholder" in post.featured_image.url %}
-                        <img src="{% static 'images/default_image.webp' %}" class="card-img-top scale" alt="Image for {{ post.title }}">
+                        <img src="{% static 'images/default_image.webp' %}" class="card-img-top scale" alt="Image for {{ post.title }}" style="width: 100%; height: auto;">
                     {% else %}
-                        <img src="{{ post.featured_image.url }}" class="card-img-top scale" alt="Image for {{ post.title }}">
+                        <img src="{{ post.featured_image.url }}" class="card-img-top scale" alt="Image for {{ post.title }}" style="width: 100%; height: auto;">
                     {% endif %}
                     <div class="image-flash">
                         <p class="category">{{ post.category.name }}</p>
