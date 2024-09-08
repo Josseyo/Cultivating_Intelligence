@@ -1,35 +1,15 @@
-  
----
 
 # Cultivating Intelligence
+<img src="docs/images/overview.png" width="800px">
 
-[View Live Website](https://cultivating-intelligence-1ead7384db49.herokuapp.com/)  
+[View Live Website](https://cultivating-intelligence-1ead7384db49.herokuapp.com/) 
+
+Welcome to **Cultivating Intelligence**, a blog dedicated to promoting Diversity, Equity, and Inclusion (DEI) in the workplace, with a particular focus on Attention Deficit Hyperactivity Disorder (ADHD). Our mission is to raise awareness about the unique challenges faced by individuals with ADHD and advocate for equitable practices that empower all employees. Through insightful articles and personal stories, we aim to provide valuable resources for both employers and employees. Join us in fostering a work culture that values every voice and ensures everyone has the opportunity to thrive.
+
+
 [View Repository](https://github.com/Josseyo/Cultivating_Intelligence)  
 
-[View README.md](https://github.com/Josseyo/Cultivating_Intelligence/main/README.md)
-
-[View Kanban and agile project](https://github.com/users/Josseyo/projects/4)
-
-## Table of Contents 
-- [Introduction](#introduction)
-- [Wireframes](#wireframes)
-- [Features](#features)
-- [UX Design](#ux-design)
-- [User Stories](#user-stories)
-- [Design](#design)
-- [Database](#database)
-- [Code Structure](#code-structure)
-- [Agile Methodology](#agile-methodology)
-- [Testing](#testing)
-- [Deployment](#deployment)
-- [Bugs](#bugs)
-- [Issues/Improvements](#issuesimprovements)
-- [Technologies](#technologies)
-- [Credits](#credits)
-- [Process](#process)
-
-## Introduction
-Welcome to Cultivating Intelligence, a blog focused on Diversity, Equity, and Inclusion (DEI) in the workplace, with a special emphasis on Attention Deficit Hyperactivity Disorder (ADHD). The mission is to raise awareness about the unique challenges faced by individuals with ADHD and advocate for equitable practices that empower all employees. Through insightful articles and personal stories, we aim to provide resources for employers and employees alike. Join us in creating a work culture that values every voice and ensures everyone has the opportunity to thrive.
+---
 
 ## Features
 
@@ -37,176 +17,228 @@ Welcome to Cultivating Intelligence, a blog focused on Diversity, Equity, and In
 - Comment creation, editing, and deletion
 - Like and comment functionality
 - Category filtering for posts
-- Contact view for collaboration request
+- Contact form for collaboration requests
+- Links to social media for easy contact
 - Admin panel for managing content
-- Custom 404 view
-- Cookies
+- Placeholder default image 
+- Custom 404 error page
+- Cookie consent management
 
-## UX Design
+---
 
-### Wireframes
+## Wireframes
 
-**Startview**: Users arrive at the homepage displaying all published posts, with options to filter by category from the menu in the navbar.
+**Homepage**: Users arrive at the homepage displaying all published posts, with options to filter by category from the navbar.
 
-**<details><summary>View Post List</summary>**
-<img src="docs/images/wireframes/wireframe_home.png" width:800px>
-<img src="docs/images/wireframes/wireframe_category.png" width:800px>
+<details><summary>View Post List</summary>
+<img src="docs/images/wireframes/wireframe_home.png" width="800px">
+<img src="docs/images/wireframes/wireframe_category.png" width="800px">
 </details>
 
 ---
 
-**Open a Post**: Users can click on a post to view its full content, along with options to **like** and **comment.**
+**Post Detail View**: Users can click on a post to view its full content, along with options to **like** and **comment**.
 
-**<details><summary>Post detailed view</summary>**
-<img src="docs/images/wireframes/wireframe_postdetail.png" width:800px>
+<details><summary>Post Detailed View</summary>
+<img src="docs/images/wireframes/wireframe_postdetail.png" width="800px">
 </details>
 
 ---
 
 **Account Registration**: Users must register to like or comment, with a straightforward registration process.
 
-**<details><summary>Signup, login, logout</summary>**
-<img src="docs/images/wireframes/wireframe_signup.png" width:800px>
+<details><summary>Signup, Login, Logout</summary>
+<img src="docs/images/wireframes/wireframe_signup.png" width="800px">
 </details>
 
 ---
 
-**Contact us**: Users can contact us for contributions and collaboration ideas, through a contact form.
+**Contact Us**: Users can reach out for contributions and collaboration ideas through a contact form.
 
-**<details><summary>Contact view</summary>**
-<img src="docs/images/wireframes/wireframe_contact.png" width:800px>
+<details><summary>Contact View</summary>
+<img src="docs/images/wireframes/wireframe_contact.png" width="800px">
 </details>
 
 ---
+
+## Agile Methodology
+
+A Kanban board was created using GitHub Projects to manage user stories and the development process.
+
+### MoSCoW Prioritization
+
+- **Must Have**: Core functionalities for MVP.
+- **Should Have**: Important features for future development.
+- **Could Have**: Enhancements for user experience.
+- **Would Be Nice To Have**: Additional features for future consideration.
 
 ### User Stories
+User stories were categorized using different labels.
 
-<details><summary>As a Site User, I can view a list of posts to select one to read.</summary>
-<img src="docs/images/userstory/brows_posts.png" width:800px>
-</details>
-![alt text](image.png)
----
+[View all user stories in Kanban view here](https://github.com/users/Josseyo/projects/4)
 
-<details><summary>As a Site User, I can click on a post to read its full text.</summary>
+## User Experience
 
-</<img src="docs/images/wireframes/wireframe_contact.png" width:800px>
+<details><summary>As a Site User, I can view a list of posts to select one to read. The navigation bar with links to different pages and the footer with links to social media is shown on each page for easy access.</summary>
+<img src="docs/images/userstory/brows_posts.png" width="800px">
 </details>
 
 ---
 
-<details><summary>As a Site User, I can navigate to different category pages to read sorted posts.</summary>
-<img src="docs/images/userstory/category_posts.png" width:800px>
+<details><summary>As a Site User, I can click on a post to read its full text and the post's comments without being logged in. To leave a comment, I must log in, with a link provided to the login view.</summary>
+<img src="docs/images/userstory/not_loggedin.png" width="800px">
+</details>
+
+---
+
+<details><summary>As a Site User, I can navigate to different category pages to filter the posts I want to read.</summary>
+<img src="docs/images/userstory/category_posts.png" width="800px">
 </details>
 
 ---
 
 <details><summary>As a Site User, I can view the number of likes to identify popular posts.</summary>
-<img src="docs/images/userstory/like.png" width:800px>
+<img src="docs/images/userstory/like.png" width="800px">
 </details>
 
 ---
 
-<details><summary>As a logged-in Site User, I can view comments on a post to engage in discussions.</summary>
-<img src="docs/images/wireframes/wireframe_contact.png" width:800px>
+<details><summary>As a Site User, I can sign up to become a registered user.</summary>
+<img src="docs/images/userstory/signup.png" width="800px">
+When I sign up, I receive a verification message confirming successful sign-in.
+<img src="docs/images/userstory/success_signin.png" width="800px">
 </details>
 
 ---
 
-<details><summary>As a logged-in Site User, I can leave comments on posts to add my input.</summary>
-<img src="docs/images/wireframes/wireframe_contact.png" width:800px>
+<details><summary>As a Registered Site User, I can log in to engage in discussions.</summary>
+<img src="docs/images/userstory/login.png" width="800px">
+If I forget to enter my name or password, I receive an alert message with instructions.
+<img src="docs/images/userstory/alert_login.png" width="800px">
+Upon logging in, I receive a confirmation of successful login.
+<img src="docs/images/userstory/login_ver.png" width="800px">
 </details>
 
 ---
 
-<details><summary>As a logged-in Site I can edit and delete my own comments, if I change my mind.</summary>
-<img src="docs/images/wireframes/wireframe_contact.png" width:800px>
+<details><summary>As a logged-in Site User, I can leave comments on posts to share my input.</summary>
+<img src="docs/images/userstory/comment_add_edit_delete.png" width="800px">
+After submitting my comment, I receive a confirmation that it was added successfully.
+<img src="docs/images/userstory/success_comment.png" width="800px">
+As a logged-in Site User, I can edit and delete my own comments if I change my mind.
 </details>
 
 ---
 
-<details><summary>As a logged-in Site User, I can like or unlike posts, to show my appreciation.</summary>
-<img src="docs/images/wireframes/wireframe_admin.png" width:800px>
+<details><summary>As a logged-in Site User, I can like or unlike posts to show my appreciation.</summary>
+<img src="docs/images/wireframes/wireframe_admin.png" width="800px">
 </details>
 
 ---
 
-<details><summary>As a Site Admin, I can log in to django dashboard and manage posts, comments, categories, likes and users.</summary>
-
-<img src="docs/images/wireframes/wireframe_admin.png" width:800px>
+<details><summary>As a Site User, I can fill in a form to send a contact request.</summary>
+If I miss filling a required field, I receive an alert to notify me.
+<img src="docs/images/userstory/pls_fillfield.png" width="800px">
+After submitting, I receive a confirmation message indicating that my message has been sent.
+<img src="docs/images/userstory/contact_verification.png" width="800px">
 </details>
 
+---
 
-## Design
+<details><summary>As a Site User, I find links in the footer of every page, allowing me to easily contact Cultivating Intelligence on social media.</summary>
+<img src="docs/images/userstory/social_media.png" width="800px">
+</details>
+
+---
+
+<details><summary>As a Site User, I will land on a 404 error page that alerts me that the requested page does not exist and provides a link to return to Home.</summary>
+<img src="docs/images/userstory/404.png" width="800px">
+</details>
+
+---
+
+<details><summary>As a logged-in user, I can log out by confirming my intention to sign out.</summary>
+<img src="docs/images/userstory/signout.png" width="800px">
+After signing out, I receive a verification alert.
+<img src="docs/images/userstory/signout_ver.png" width="800px">
+</details>
+
+---
+
+<details><summary>As a Site Admin, I can log in to the Django dashboard to manage posts, comments, categories, and users.</summary>
+<img src="docs/images/userstory/admin.png" width="800px">
+</details>
+
+---
 
 ### Colors
 
-Colors were chosen  to create a visually appealing and supportive environment for individuals with ADHD, promoting focus and reducing distractions.
+Colors were chosen to create a visually appealing and supportive environment for individuals with ADHD, promoting focus and reducing distractions.
 
-<img src="docs/images/colors.png" width="800">
+<img src="docs/images/colors.png" width="800px">
 
-<details><summary>About the colors</summary>
+<details><summary>About the Colors</summary>
 
 ### **White (#ffffff)**
-A pure, clean color that represents simplicity and clarity.
+A pure, clean color representing simplicity and clarity.
 
-**Benefits**: White creates a sense of spaciousness.. It reduces distractions, allowing individuals with ADHD to focus better on the content without feeling overwhelmed.
+**Benefits**: White creates a sense of spaciousness and reduces distractions, allowing individuals with ADHD to focus better on the content. It is used as the background for the navbar and for text on dark backgrounds to create good contrast.
 
 ### **Light Background (#fffce9)**
 A soft, warm off-white with a hint of yellow.
 
-**Benefits**: A  gentle background  on the eyes promotes a sense of warmth and comfort. It reduces visual strain, making it easier for individuals with ADHD to engage with the content.
+**Benefits**: A gentle background on the eyes promotes warmth and comfort, reducing visual strain and making it easier for individuals with ADHD to engage with the content.
 
 ### **Blue (#003f66)**
 A deep, calming blue that conveys trust and stability.
 
-**Benefits**: Blue is known for its calming effects and can enhance concentration. It can help individuals with ADHD feel more focused and less anxious, making it a good choice for backgrounds or accents to create strong contrast without being too harsh
+**Benefits**: Blue is known for its calming effects and can enhance concentration, helping individuals with ADHD feel more focused and less anxious.
 
 ### **Dark Grey (#c05b56)**
 A muted, earthy tone that adds depth and sophistication.
 
-**Benefits**: Dark grey can provide a strong contrast without being too harsh, helping to highlight important information. It can also evoke a sense of seriousness and professionalism, which may help in maintaining attention.
+**Benefits**: Dark grey provides strong contrast without being too harsh, helping to highlight important information and evoke a sense of seriousness.
 
 ### **Gold (#b0702a)**
 A rich, warm gold that evokes feelings of positivity and warmth.
 
-**Benefits**: Gold can stimulate feelings of optimism and creativity. It can be used to draw attention and encourage engagement without overwhelming the viewer. Used for detail in logo/brand name.
+**Benefits**: Gold can stimulate feelings of optimism and creativity, drawing attention and encouraging engagement without overwhelming the viewer. It is used for details in the logo/brand name.
 </details>
 
-### Fonts
-Lato is a sans-serif typeface and is used for the brand logo. It is suitable for individuals with ADHD. The clean letterforms enhance readability, reducing visual clutter and helping users focus on the text. 
-
-<details><summary>Primary Font</summary>
-  - Lato, sans-serif
-  - Font Size: 1.6rem
-  - Font Weight: 700 (Bold) for brand text
-
-- **Text Weights**
-  - Bold: font-weight: bold;
-  - Thin: font-weight: 300;
-</details>
-
-## Database
-I have used [CI Database](https://dbs.ci-dbs.net/) for the project.
-
-## Storage
-[Cloudinary](https://cloudinary.com/) is used for managing images in the cloud. 
+---
 
 ### Fonts
-- Font Awesome: [Font Awesome](http://fontawesome.io/)
+Fonts for an ADHD-Friendly Blog
+
+- **Lato**: A sans-serif typeface used for the brand logo. Its clean letterforms enhance readability, reducing visual clutter and helping users focus on the text. 
+[Check out Lato on Google Fonts](https://fonts.google.com/specimen/Lato)
+
+- **Roboto**: A modern sans-serif design that enhances readability and establishes clear content hierarchy. Its balanced spacing creates a comfortable reading experience, improving accessibility and engagement for all users.
+[Check out Roboto on Google Fonts](https://fonts.google.com/specimen/Roboto)
+
+---
+
+- **Font Awesome** is used for social media brand icons.
+
+[Check out icons on Font Awesome](https://fontawesome.com/)
+
+---
 
 ### Imagery
-- Post images from: [Stock Cake](https://stockcake.com)
-- Default blog post image from [Unsplash](https://unsplash.com...)
+- Post images sourced from: [Stock Cake](https://stockcake.com)
+- Default blog post image from [Unsplash](https://unsplash.com)
 
-### Entity-Relationship Diagram (ERD)  
+---
+
+## Entity-Relationship Diagram (ERD)  
 The database structure is based on a PostgreSQL model, representing tables, columns, relationships, and constraints.
 
 ### Database Models
-- **Post Model**: Contains details for each blog post, including title, content, and author. The Post model includes method to count the total likes for the post.
+- **Post Model**: Contains details for each blog post, including title, content, and author. This model includes a method to count the total likes for each post.
 - **Comment Model**: Manages comments associated with posts.
 - **Category Model**: Organizes posts into categories.
-- **Contact Model** Serves as a reference point for multiple CollaborateRequest instances.
-- **CollaborateRequest** Ensures that all requests are tracked effectively.
+- **Contact Model**: Serves as a reference point for multiple `CollaborateRequest` instances.
+- **CollaborateRequest Model**: Ensures that all requests are tracked effectively.
 
 ### ERD Relationships
 
@@ -214,360 +246,77 @@ The database structure is based on a PostgreSQL model, representing tables, colu
 - **User to Comment**: One-to-Many (A user can have multiple comments; each comment is associated with one user.)
 - **Post to Comment**: One-to-Many (A post can have multiple comments; each comment is associated with one post.)
 - **Category to Post**: One-to-Many (A post belongs to one category; a category can have multiple posts.)
-- **Contact to CollaborateRequest**: One-to-Many (Contact can have multiple CollaborateRequests; each CollaborateRequest is linked to only one contact)
-
-![ERD](https://docs.google.com/presentation/d/1CF1Q54uuGRmJGlnQ6oZJiOQuT8qSisuKo4ukPUVWv6w/edit?usp=sharing)
+- **Contact to CollaborateRequest**: One-to-Many (A contact can have multiple `CollaborateRequests`; each `CollaborateRequest` is linked to only one contact.)
 
 <details><summary>Click to view ERD</summary>
-<img src="docs/images/models/cultivating_intelligence_erd_v2.png" width="800">
+<img src="docs/images/models/cultivating_intelligence_erd_v2.png" width="800px">
+
+[View ERD](https://docs.google.com/presentation/d/1CF1Q54uuGRmJGlnQ6oZJiOQuT8qSisuKo4ukPUVWv6w/edit?usp=sharing)
 </details>
 
-## Code Structure
+---
 
+## Database
+The project utilizes the [CI Database](https://dbs.ci-dbs.net/).
+
+## Storage
+[Cloudinary](https://cloudinary.com/) is used for managing images in the cloud.
+
+## Code Structure
 The project code is organized within application folders, constructed using the Django framework.
 
-### Project Apps
+**<details><summary>Code Structure</summary>**
+![Code Structure](docs/images/code_structure.png)
+</details>
 
-![Installed apps](code_structure.png)
+**<details><summary>Project Apps</summary>**
+- `Blog`
+- `Contact`
+- `Cultivating Intelligence`
+</details>
 
-INSTALLED_APPS 
-   "django.contrib.admin",
-   "django.contrib.auth",
-   "django.contrib.contenttypes",
-   "django.contrib.sessions",
-   "django.contrib.messages",
-   "django.contrib.staticfiles",
-   "cloudinary_storage",
-   "django.contrib.sites",
-   "allauth",
-   "allauth.account",
-   "allauth.socialaccount",
-   "crispy_forms",
-   "crispy_bootstrap5",
-   "django_summernote",
-   "cloudinary",
-   "blog"
-   "contact"
+**<details><summary>Installed Apps</summary>**
+   - `django.contrib.admin`
+   - `django.contrib.auth`
+   - `django.contrib.contenttypes`
+   - `django.contrib.sessions`
+   - `django.contrib.messages`
+   - `django.contrib.staticfiles`
+   - `cloudinary_storage`
+   - `django.contrib.sites`
+   - `allauth`
+   - `allauth.account`
+   - `allauth.socialaccount`
+   - `crispy_forms`
+   - `crispy_bootstrap5`
+   - `django_summernote`
+   - `cloudinary`
+   - `blog`
+   - `contact`
+</details>
 
-### Other Django Apps
-
+**<details><summary>Other Django Files</summary>**
 - **settings.py**: Configuration settings for the Django project.
 - **Procfile**: Commands for deploying the Django app.
 - **static**: Base CSS and JavaScript files.
 - **templates**: Base-level and app-specific HTML templates.
 - **requirements.txt**: Lists dependencies for the project.
 - **env.py**: Stores environment variables securely.
-
-## Agile Methodology
-
-[View Kanban Board](https://github.com/users/Josseyo/projects/4)
-
-A Kanban board was created using GitHub Projects to manage user stories and the development process.
-
-### MUSCOW Prioritization
-
-- **Must Have**: Core functionalities for MVP.
-- **Should Have**: Important features for future development.
-- **Could Have**: Enhancements for user experience.
-- **Would Be Nice To Have**: Additional features for future consideration.
-
-### Future Development
-
-- Nested comments for hierarchical discussions.
-- Allow users to tag posts for easier searching
-
-
-## Testing
-
-The flow was tested during and post development
-
-   - Device Testing
-   - Browser Compatibility
-   - Manual Testing
-
----
-
-### Code Validation
-
-- **HTML** Validated using [W3C HTML Validator](https://validator.w3.org/)
-- **CSS** Validated using [Jigsaw W3 Validator](https://jigsaw.w3.org/css-validator/)
-- **Javascript** validated using [JS hint](https://jshint.com)
-- **Python** validated using [CI Python Linter](https://pep8ci.herokuapp.com/)
-- **Performance** validated using [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
-- **Accessibility** validated using [Wave Validator](https://wave.webaim.org/) 
-
-[Terminal errors fixes](https://docs.google.com/document/d/1ebW5cHddPkr2NpX6HFFQn2LsT-bAh9Y6OB7q3mzyrgo/edit?usp=sharing)
-
-[Validation errors and fixes](https://docs.google.com/document/d/1E_De--nyuZ5WqO-qT4h3DGXI8gPx17r_KLHbBCgbNo0/edit?usp=sharing)
-
-### Web app passed validators with no errors. 
-
-### Html
-
-<details><summary>Click to view html-validation errors</summary>
-<img src="docs/images/validation/home-html-errors.png" width="800" >
-</details>
-
-#### HTML validated without errors
-
-<details><summary>Home</summary>
-<img src="docs/images/validation/home-html-valid.png" width="800" >
-</details>
-
-<details><summary>Register</summary>
-<img src="docs/images/validation/signup-html-valid.png" width="800" >
-</details>
-
-<details><summary>Login</summary>
-<img src="docs/images/validation/login-html-valid.png" width="800" >
-</details>
-
-<details><summary>Logout</summary>
-<img src="docs/images/validation/logout-html-valid.png" width="800" >
-</details>
-
-<details><summary>Blog detail</summary>
-<img src="docs/images/validation/blog-detail-html-valid.png" width="800" >
-</details>
-
-<details><summary>Category</summary>
-<img src="docs/images/validation/category-html-valid.png" width="800">
-</details>
-
-<details><summary>Comment ad/edit/delete</summary>
-<img src="docs/validation/html-css/blog-edit.png" width="800">
-</details>
-
-### CSS
-[Jigsaw W3 Validator](https://jigsaw.w3.org/css-validator/) was used to validate the css styling
-
-#### CSS validated without errors
-
-<details><summary>Home</summary>
-<img src="docs/images/validation/css-home-valid.png" width="800" >
-
-[Validation details CSS - Home](http://jigsaw.w3.org/css-validator/validator?lang=sv&profile=css3svg&uri=https%3A%2F%2Fcultivating-intelligence-1ead7384db49.herokuapp.com%2Fadhd-always-deeply-highly-dedicated%2F&usermedium=all&vextwarning=&warning=1)
-</details>
-
-<details><summary>Blog detail</summary>
-<img src="docs/images/validation/css-blog-detail-valid.png" width="800">
-
-[Validation details CSS - Post detail](http://jigsaw.w3.org/css-validator/validator?lang=sv&profile=css3svg&uri=https%3A%2F%2Fcultivating-intelligence-1ead7384db49.herokuapp.com%2F&usermedium=all&vextwarning=&warning=1)
-</details>
-
-   
-### Javascript
-[JShint](https://jshint.com/) was used to validate the custom script file: comments.js
-
-
-<details><summary>Js file</summary>
-   <details><summary>comments.js</summary>
-   <img src="docs/images/validation/comments-js-valid.png" width="800">
-   </details>
-
-   <details><summary>cookies.js</summary>
-   <img src="docs/images/validation/python-js-cookies-views.png" width="800" >
-   </details>
-
-
-### Python
-[CI Python Linter](https://pep8ci.herokuapp.com/) to check  Python code for validity and conventions
-
-<details><summary>Blog app</summary>
-
-   <details><summary>admin.py</summary>
-   <img src="docs/images/validation/python-js/home-views.png" width="800" >
-   </details>
-
-   <details><summary>apps.py</summary>
-   <img src="docs/images/validation/python-js/home-views.png" width="800" >
-   </details>
-
-   <details><summary>forms.py</summary>
-   <img src="docs/images/validation/python-js/home-views.png" width="800" >
-   </details>
-
-   <details><summary>models.py</summary>
-   <img src="docs/images/validation/python-js/home-views.png" width="800" >
-   </details>
-
-   <details><summary>tests.py</summary>
-   <img src="docs/images/validation/python-js/home-views.png" width="800" >
-   </details>
-
-   <details><summary>urls.py</summary>
-   <img src="docs/images/validation/python-js/home-url.png" width="800" >
-   </details>
-
-   <details><summary>views.py</summary>
-   <img src="docs/images/validation/python-js/home-forms.png" width="800" >
-   </details>
-
-</details>
-
-   ***
-
-<details><summary>cultivating_intelligence_blog app</summary>
-
-   <details><summary>asgi.py</summary>
-   <img src="docs/images/validation/python-js/blog-views2.png" width="800" >
-   </details>
-
-   <details><summary>settings.py</summary>
-   <img src="docs/images/validation/python-js/blog-views2.png" width="800" >
-   </details>
-
-   <details><summary>urls.py</summary>
-   <img src="docs/images/validation/python-js/blog-urls.png" width="800" >
-   </details>
-
-   <details><summary>wsgi.py</summary>
-   <img src="docs/images/validation/python-js/blog-forms.png" width="800" >
-   </details>
-
-   <details><summary>models.py</summary>
-   <img src="docs/images/validation/python-js/blog-models.png" width="800" >
-   </details> 
 </details>
 
 
-### Lighthouse
+## Testing & Validation
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) used for analyzing performance, accessibility and SEO for the project. Below are the results of the analysis:
- 
-<details><summary>Home Desktop-screen</summary>
-<img src="docs/images/validation/lighthouse-home-desk.png" width="800" >
+Features and workflows were manually tested across different screen sizes and browser compatibility. The code was validated with:
 
-[Home desktop screen](https://pagespeed.web.dev/analysis/https-cultivating-intelligence-1ead7384db49-herokuapp-com/5wce22rjex?form_factor=desktop&category=performance&category=accessibility&category=best-practices&category=seo&hl=sv&utm_source=lh-chrome-ext) 
-</details>
+- **HTML**: Validated using the [W3C HTML Validator](https://validator.w3.org/)
+- **CSS**: Validated using the [Jigsaw W3 Validator](https://jigsaw.w3.org/css-validator/)
+- **JavaScript**: Validated using [JS Hint](https://jshint.com)
+- **Python**: Validated using the [CI Python Linter](https://pep8ci.herokuapp.com/)
+- **Performance**: Validated using [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+- **Accessibility**: Validated using the [Wave Validator](https://wave.webaim.org/) 
 
-<details><summary>Home Mobile-screen</summary>
-<img src="docs/images/validation/lighthouse-home-mob.png" width="800" >
-
-[Home mobile screen](https://pagespeed.web.dev/analysis/https-cultivating-intelligence-1ead7384db49-herokuapp-com/5wce22rjex?form_factor=mobile&category=performance&category=accessibility&category=best-practices&category=seo&hl=sv&utm_source=lh-chrome-ext)
-</details>
-
-<details><summary>Contact page Desktop-screen</summary>
-<img src="docs/images/validation/lighthouse-contact-desk.png" width="800">
-
-[Contact desktop screen](https://pagespeed.web.dev/analysis/https-cultivating-intelligence-1ead7384db49-herokuapp-com-contact-contact/vaxw748m9x?form_factor=desktop&category=performance&category=accessibility&category=best-practices&category=seo&hl=sv&utm_source=lh-chrome-ext)
-</details>
-
-<details><summary>Contact page Mobile-screen</summary>
-<img src="docs/images/validation/lighthouse-contact-mob.png" width="800">
-
-[Contact mobile screen](https://pagespeed.web.dev/analysis/https-cultivating-intelligence-1ead7384db49-herokuapp-com-contact-contact/vaxw748m9x?form_factor=mobile&category=performance&category=accessibility&category=best-practices&category=seo&hl=sv&utm_source=lh-chrome-ext)
-</details>
-
-<details><summary>Blog detail Desktop-screen</summary>
-<img src="docs/images/validation/lighthouse-blog-detail-desk.png" width="800"> 
-
-[Blog detail Desktop-screen](https://pagespeed.web.dev/analysis/https-cultivating-intelligence-1ead7384db49-herokuapp-com-sensory-friendly-spaces/oaxyoxkz03?form_factor=desktop&category=performance&category=accessibility&category=best-practices&category=seo&hl=sv&utm_source=lh-chrome-ext)
-</details>
-
-<details><summary>Blog detail Mobile-screen</summary>
-<img src="docs/images/validation/lighthouse-blog-detail-mob.png" width="800">
-
-[Blog detail Mobile-screen](https://pagespeed.web.dev/analysis/https-cultivating-intelligence-1ead7384db49-herokuapp-com-sensory-friendly-spaces/oaxyoxkz03?form_factor=mobile&category=performance&category=accessibility&category=best-practices&category=seo&hl=sv&utm_source=lh-chrome-ext)
-</details>
-
-<details><summary>Category Desktop-screen</summary>
-<img src="docs/images/validation/lighthouse-category-desk.png" width="800" >
-
-[Category Desktop-screen](https://pagespeed.web.dev/analysis/https-cultivating-intelligence-1ead7384db49-herokuapp-com-category-Workplace%20Strategies/ehokhlzwbe?form_factor=desktop&category=performance&category=accessibility&category=best-practices&category=seo&hl=sv&utm_source=lh-chrome-ext)
-</details>
-
-<details><summary>Category Mobile-screen</summary>
-<img src="docs/validation/lighthouse-category-mob.png" width="800">
-
-[Category Mobile-screen](https://pagespeed.web.dev/analysis/https-cultivating-intelligence-1ead7384db49-herokuapp-com-category-Workplace%20Strategies/ehokhlzwbe?form_factor=mobile&category=performance&category=accessibility&category=best-practices&category=seo&hl=sv&utm_source=lh-chrome-ext)
-</details>
-
-<details><summary>Comment edit Desktop-screen</summary>
-<img src="docs/images/validation/lighthouse-comment-edit-desk.png" width="800">
-
-[Comment edit Desktop-screen](https://pagespeed.web.dev/analysis/https-cultivating-intelligence-1ead7384db49-herokuapp-com-adhd-always-deeply-highly-dedicated-edit_comment-127/o50n6hpg0o?use_original_url=true&hl=sv&form_factor=desktophttps://pagespeed.web.dev/analysis/https-cultivating-intelligence-1ead7384db49-herokuapp-com-adhd-always-deeply-highly-dedicated-edit_comment-127/o50n6hpg0o?use_original_url=true&hl=sv&form_factor=desktop)
-</details>
-
-<details><summary>Comment edit Mobile-screen</summary>
-<img src="docs/images/validation/lighthouse-comment-edit-mob.png" width="800">
-
-[Comment edit Mobile-screen](https://pagespeed.web.dev/analysis/https-cultivating-intelligence-1ead7384db49-herokuapp-com-adhd-always-deeply-highly-dedicated-edit_comment-127/o50n6hpg0o?use_original_url=true&hl=sv&form_factor=mobile)
-</details>
-
-<details><summary>Register page Desktop-screen</summary>
-<img src="docs/images/validation/lighthouse-register-desk.png" width="800">
-
-
-[Register page Desktop-screen](https://pagespeed.web.dev/analysis/https-cultivating-intelligence-1ead7384db49-herokuapp-com-accounts-signup/p39w03m9g3?form_factor=desktop&category=performance&category=accessibility&category=best-practices&category=seo&hl=sv&utm_source=lh-chrome-ext)
-
-</details>
-
-<details><summary>Register page Mobile-screen</summary>
-<img src="docs/images/validation/lighthouse-register-mob.png" width="800">
-
-[Register page Mobile-screen](https://pagespeed.web.dev/analysis/https-cultivating-intelligence-1ead7384db49-herokuapp-com-accounts-signup/p39w03m9g3?form_factor=mobile&category=performance&category=accessibility&category=best-practices&category=seo&hl=sv&utm_source=lh-chrome-ext)
-
-</details>
-
-<details><summary>Login Desktop-screen</summary>
-<img src="docs/images/validation/lighthouse/login-desk.png" width="800">
-</details>
-
-<details><summary>Login page Mobile-screen</summary>
-<img src="docs/images/validation/lighthouse/login-mob.png" width="800">
-</details>
-
-<details><summary>Logout Desktop-screen</summary>
-<img src="docs/images/validation/lighthouse/logout-desk.png" width="800">
-</details>
-
-<details><summary>Logout page Mobile-screen</summary>
-<img src="docs/images/validation/lighthouse/logout-mob.png" width="800">
-</details>
-
-
-### Wave
-[Wave Validator](https://wave.webaim.org/) to evaluate accessibility
-
-<details><summary>Home</summary>
-<img src="docs/validation/wave/home-pg.png" width="800" height="1200" >
-</details>
-
-<details><summary>Register</summary>
-<img src="docs/validation/wave/register-pg.png" width="800" height="1200">
-</details>
-
-<details><summary>Login</summary>
-<img src="docs/validation/wave/login-pg.png" width="800" height="1200">
-</details>
-
-<details><summary>Logout</summary>
-<img src="docs/validation/wave/logout-pg.png" width="800" height="1200">
-</details>
-
-<details><summary>Confirm logout</summary>
-<img src="docs/validation/wave/logout-pg.png" width="800" height="1200">
-</details>
-
-<details><summary>Blog detail</summary>
-<img src="docs/validation/wave/blog-detail.png" width="800" >
-</details>
-
-<details><summary>Category</summary>
-<img src="docs/validation/wave/category-pg.png" width="800" >
-</details>
-
-## Testing
-
-The project was tested during and post development
-    - Device Testing
-    - Browser Compatibility
-    - Manual Testing
-
-## Bugs
-
-[View Bug Documentation](https://docs.google.com/document/d/1ebW5cHddPkr2NpX6HFFQn2LsT-bAh9Y6OB7q3mzyrgo/edit)
+**See detailed [Test Report](docs/TESTING.md)**
 
 ## Heroku Deployment
 
@@ -577,15 +326,14 @@ Before deploying to Heroku, ensure you have the following variables prepared:
 - **SECRET_KEY** (You can generate one [here](https://miniwebtool.com/django-secret-key-generator/))
 - **CLOUDINARY_URL** (After logging in to the Cloudinary website, copy the 'Cloudinary URL' from your account dashboard)
 
-
-<details><summary>Deploying to Heroku - step by step </summary>
+<details><summary>Deploying to Heroku - Step by Step</summary>
 
 1. **Create `env.py`**: At the root level of your project, create a file named `env.py` and add the following lines, replacing the placeholders with your actual values:
 
    ```python
    import os
 
-   os.environ['DATABASE_URL'] = 'your_Database_URL'
+   os.environ['DATABASE_URL'] = 'your_database_url'
    os.environ['SECRET_KEY'] = 'your_secret_key'
    os.environ['CLOUDINARY_URL'] = 'your_cloudinary_url'
    ```
@@ -600,11 +348,11 @@ Before deploying to Heroku, ensure you have the following variables prepared:
 4. **Set Up Environment Variables**:
    - Navigate to the 'Settings' tab of your newly created app.
    - Click on 'Reveal Config Vars' and add the following environment variables:
-   - `DATABASE_URL`: Your Database URL
-   - `SECRET_KEY`: Your generated secret key
-   - `CLOUDINARY_URL`: Your Cloudinary URL
-   - `DISABLE_COLLECTSTATIC`: Set this variable to `1` (this can be removed after the initial deployment)
-   - `PORT`: Set this variable to `8000`
+     - `DATABASE_URL`: Your Database URL
+     - `SECRET_KEY`: Your generated secret key
+     - `CLOUDINARY_URL`: Your Cloudinary URL
+     - `DISABLE_COLLECTSTATIC`: Set this variable to `1` (this can be removed after the initial deployment)
+     - `PORT`: Set this variable to `8000`
 
 5. **Deploy Your App**:
    - Select the 'Deploy' tab from the dashboard.
@@ -666,12 +414,24 @@ Before deploying to Heroku, ensure you have the following variables prepared:
 
 ---
 
-## Issues/Improvements
-- Consistency in typography, including text and heading levels.
+## Future Improvements
 
+- Implement a [caching audit](https://github.com/GoogleChrome/lighthouse/blob/main/core/audits/byte-efficiency/uses-long-cache-ttl.js) to ensure static assets have an effective caching policy.
+- Use WebP format for all blog post images to improve page speed.
+- Add width and height attributes to blog post images for better layout control.
+- Implement local timestamps on comments for better context.
+- Add comment counts on the Home page and Category post list page, similar to the post detail view, where both like and comment counts are shown.
+- Include back and forward navigation links on post detail pages for easier navigation between posts.
+- Implement nested comments for hierarchical discussions.
+- Allow users to tag posts for easier searching.
+- Complete remaining user stories; see the [project backlog](https://github.com/users/Josseyo/projects/4/views/1).
 
 ## Technologies
-The following technologies were utilized in this project:
+
+### Development Tool
+- **IDE**: [Gitpod](https://www.gitpod.io/)
+
+**The following technologies were utilized in this project:**
 
 ### Backend
 - **Python**: The primary language for backend development.
@@ -682,7 +442,7 @@ The following technologies were utilized in this project:
 - **HTML**: The standard markup language for creating web pages.
 - **CSS**: Styles web page layout and design.
 - **JavaScript**: Adds interactivity to web pages.
-- **Bootstrap**: A front-end framework for responsive, mobile-first web development. Using [Bootstrap 5.3](https://getbootstrap.com/docs/5.3/getting-started/introduction/).
+- **Bootstrap**: A front-end framework for responsive, mobile-first web development, using [Bootstrap 5.3](https://getbootstrap.com/docs/5.3/getting-started/introduction/).
 - **Font Awesome**: A toolkit for icons and fonts. [Font Awesome](https://fontawesome.com/)
 - **Google Fonts**: A library of web fonts. [Google Fonts](https://fonts.google.com/)
 
@@ -698,7 +458,7 @@ The following technologies were utilized in this project:
 - **Whitenoise**: Serves static files for Python web apps. [Whitenoise Documentation](http://whitenoise.evans.io/en/stable/)
 
 ## Packages
-The packages installed for this project can be found in requirements.txt and can be seen below.
+The packages installed for this project can be found in `requirements.txt` and include:
 
 - [asgiref==3.8.1](https://pypi.org/project/asgiref/)
 - [cloudinary==1.40.0](https://pypi.org/project/cloudinary/)
@@ -726,21 +486,13 @@ For full details on project dependencies, please refer to the `requirements.txt`
 
 ## Credits
 
-- User Stories Reference: [CI Blog user stories](https://github.com/Code-Institute-Solutions/BlogUserStories/blob/main/userstories.md)
+- CI LMS 
+- CI Django Blog Tutorial: [YouTube Video](https://www.youtube.com/watch?v=YH--VobIA8c&t=1453s)
+- How to create a custom 404 error page: [MakeUseOf](https://www.makeuseof.com/create-custom-404-error-page-django/)
+- User Stories Reference: [CI Blog User Stories](https://github.com/Code-Institute-Solutions/BlogUserStories/blob/main/userstories.md)
 - User Stories Reference: [GitHub Repository Rockroman](https://github.com/rockroman/CI_PP4-Knowledge-Flow/blob/main/README.md?plain=1)
 - User Stories Reference: [GitHub Repository ShizukaDonague](https://github.com/ShizukaDonaghue/happy-beans?tab=readme-ov-file)
-- CI Django Blog Tutorial: [YouTube Video](https://www.youtube.com/watch?v=YH--VobIA8c&t=1453s)
-- How to create a custom 404 error page: [makeuseof.com] https://www.makeuseof.com/create-custom-404-error-page-django/
-- Trouble shooting support: [Linus Johansson](https://github.com/j0hanz)
+- Troubleshooting support: [Linus Johansson](https://github.com/j0hanz)
 
 
-## Process
-
-### Challenges
-
-- Rearranging user stories in the Kanban board was challenging initially.
-- Issues with the CI database caused interruptions and confusion.
-- Maintaining documentation in GitHub was time-consuming.
-
----
 
