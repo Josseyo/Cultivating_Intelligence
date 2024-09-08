@@ -107,7 +107,7 @@
 <img src="images/validation/home-html-valid.png" width="800">
 </details>
 
-<details><summary>Register (errors)</summary>
+<details><summary>Register (remaining errors)</summary>
 Unsolved errors in Django signup template:
 <img src="images/validation/signup-html-error.png" width="800">
 </details>
@@ -120,7 +120,7 @@ Unsolved errors in Django signup template:
 <img src="images/validation/logout-html-valid.png" width="800">
 </details>
 
-<details><summary>Blog Detail (error)</summary>
+<details><summary>Blog Detail (remaining error)</summary>
 Unsolved error in Django admin add post: 
 <img src="images/validation/blog-detail-html-error.png" width="800">
 ![Blog Detail Error](images/validation/blog-detail-html-error2.png)
@@ -183,17 +183,16 @@ Unsolved error in Django admin add post:
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) used for analyzing performance, accessibility, and SEO for the project. 
 
-For latest improvements, follow the link in the beginning of each section:
-
 <details><summary>Home Desktop Screen</summary>
 
-[Home Desktop Screen](https://pagespeed.web.dev/analysis/https-cultivating-intelligence-1ead7384db49-herokuapp-com/5wce22rjex?form_factor=desktop&category=performance&category=accessibility&category=best-practices&category=seo&hl=sv&utm_source=lh-chrome-ext) 
-<img src="images/validation/lighthouse-home-desk.png" width="800">
+[Home Desktop Screen](https://pagespeed.web.dev/analysis/https-cultivating-intelligence-1ead7384db49-herokuapp-com/4z7hvdc4f6?form_factor=desktop&category=performance&category=accessibility&category=best-practices&category=seo&hl=sv-SE&utm_source=lh-chrome-ext) 
+<img src="images/validation/lighthouse-home-desk_2.png" width="800">
 </details>
+
 
 <details><summary>Home Mobile Screen</summary>
 
-[Home Mobile Screen](https://pagespeed.web.dev/analysis/https-cultivating-intelligence-1ead7384db49-herokuapp-com/5wce22rjex?form_factor=mobile&category=performance&category=accessibility&category=best-practices&category=seo&hl=sv&utm_source=lh-chrome-ext)
+[Home Mobile Screen](https://pagespeed.web.dev/analysis/https-cultivating-intelligence-1ead7384db49-herokuapp-com/4z7hvdc4f6?form_factor=mobile&category=performance&category=accessibility&category=best-practices&category=seo&hl=sv-SE&utm_source=lh-chrome-ext)
 <img src="images/validation/lighthouse-home-mob.png" width="800">
 </details>
 
@@ -211,9 +210,11 @@ For latest improvements, follow the link in the beginning of each section:
 
 <details><summary>Blog Detail Desktop Screen</summary>
 
-[Blog Detail Desktop Screen](https://pagespeed.web.dev/analysis/https-cultivating-intelligence-1ead7384db49-herokuapp-com-sensory-friendly-spaces/oaxyoxkz03?form_factor=desktop&category=performance&category=accessibility&category=best-practices&category=seo&hl=sv&utm_source=lh-chrome-ext)
-<img src="images/validation/add_alt_attribute.png" width="800"> 
+[Blog Detail Desktop Screen](https://pagespeed.web.dev/analysis/https-cultivating-intelligence-1ead7384db49-herokuapp-com-adhd-always-deeply-highly-dedicated/cb7urvaeez?form_factor=desktop&category=performance&category=accessibility&category=best-practices&category=seo&hl=sv-SE&utm_source=lh-chrome-ext)
+<img src="images/validation/lighthouse_blog_detail_desk_2.png" width="800"> 
 </details>
+
+
 
 <details><summary>Blog Detail Mobile Screen</summary>
 
@@ -221,11 +222,13 @@ For latest improvements, follow the link in the beginning of each section:
 <img src="images/validation/lighthouse-blog-detail-mob.png" width="800">
 </details>
 
+
 <details><summary>Category Desktop Screen</summary>
 
-[Category Desktop Screen](https://pagespeed.web.dev/analysis/https-cultivating-intelligence-1ead7384db49-herokuapp-com-category-Workplace%20Strategies/ehokhlzwbe?form_factor=desktop&category=performance&category=accessibility&category=best-practices&category=seo&hl=sv&utm_source=lh-chrome-ext)
-<img src="images/validation/lighthouse-category-desk.png" width="800">
+[Category Desktop Screen](https://pagespeed.web.dev/analysis/https-cultivating-intelligence-1ead7384db49-herokuapp-com-category-Education%20-%20Inclusive%20Practices/stcpqxf767?form_factor=mobile&category=performance&category=accessibility&category=best-practices&category=seo&hl=sv-SE&utm_source=lh-chrome-ext)
+<img src="images/validation/lighthouse-category-desk_2.png" width="800">
 </details>
+
 
 <details><summary>Category Mobile Screen</summary>
 
@@ -233,11 +236,11 @@ For latest improvements, follow the link in the beginning of each section:
 <img src="images/validation/lighthouse-category-mob.png" width="800">
 </details>
 
+
 <details><summary>Comment Edit Desktop Screen</summary>
 
-[Comment Edit Desktop Screen](https://pagespeed.web.dev/analysis/https-cultivating-intelligence-1ead7384db49-herokuapp-com-adhd-always-deeply-highly-dedicated-edit_comment-127/o50n6hpg0o?use_original_url=true&hl=sv&form_factor=desktop)
 <img src="images/validation/lighthouse-comment-edit-desk.png" width="800">
-</details>
+
 
 <details><summary>Comment Edit Mobile Screen</summary>
 
@@ -255,39 +258,6 @@ For latest improvements, follow the link in the beginning of each section:
 
 [Register Page Mobile Screen](https://pagespeed.web.dev/analysis/https-cultivating-intelligence-1ead7384db49-herokuapp-com-accounts-signup/p39w03m9g3?form_factor=mobile&category=performance&category=accessibility&category=best-practices&category=seo&hl=sv&utm_source=lh-chrome-ext)
 <img src="images/validation/lighthouse-register-mob.png" width="800">
-</details>
-
----
-
-### Wave
-[Wave Validator](https://wave.webaim.org/) to evaluate accessibility.
-
-<details><summary>Home</summary>
-<img src="images/validation/home-pg.png" width="800" height="1200">
-</details>
-
-<details><summary>Register</summary>
-<img src="images/validation/register-pg.png" width="800" height="1200">
-</details>
-
-<details><summary>Login</summary>
-<img src="images/validation/login-pg.png" width="800" height="1200">
-</details>
-
-<details><summary>Logout</summary>
-<img src="images/validation/wave/logout-pg.png" width="800" height="1200">
-</details>
-
-<details><summary>Confirm Logout</summary>
-<img src="images/validation/wave/logout-pg.png" width="800" height="1200">
-</details>
-
-<details><summary>Blog Detail</summary>
-<img src="images/validation/wave/blog-detail.png" width="800">
-</details>
-
-<details><summary>Category</summary>
-<img src="images/validation/category.png" width="800">
 </details>
 
 ---
